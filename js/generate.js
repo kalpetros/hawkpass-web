@@ -2,8 +2,9 @@
   var TOTAL_EVENTS = 500
     , events_left = TOTAL_EVENTS;
 
-  if ( random.ready() )
-    events_left = 0;
+  if ( random.ready() ) {
+    events_left = 400;
+  };
 
   function parseOptions(options) {
     return $.extend({
@@ -31,7 +32,7 @@
 
       sentence.push(random.choice(haystack));
       entropy += Math.log(haystack.length)/Math.log(2);
-    }
+    };
 
     if (!options.use_spaces) // Capitalize the letters if we don't use spaces
     {
@@ -40,7 +41,7 @@
         token = token.substr(0, 1).toUpperCase() + token.substr(1);
         sentence[i] = token;
       }
-    }
+    };
 
     var ret = {
       password: sentence.join(" ")
@@ -60,7 +61,7 @@
         }, ret.password);
       ret.password = new_password.password;
       ret.entropy += new_password.entropy;
-    }
+    };
     if ( options.use_symbol )
     {
       var new_password = exports.addReplacement({
@@ -78,11 +79,11 @@
         }, ret.password);
       ret.password = new_password.password;
       ret.entropy += new_password.entropy;
-    }
+    };
     if ( ! options.use_spaces )
     {
       ret.password = ret.password.replace(/ /g, '');
-    }
+    };
     return ret;
   };
 
@@ -112,8 +113,8 @@
   };
 
   $(document).ready(function() {
-    var more_entropy_progress_div = $('#more_entropy .progress div')
-      , reminder_elem = $('#more_entropy .reminder')
+    var more_entropy_progress_div = $('.entropy_mouse .entropy_bar div')
+      , reminder_elem = $('.entropy_mouse .reminder')
       , show_reminder = function() { reminder_elem.addClass('visible'); }
       , reminder_timeout = null
       , generate_password = function() {
@@ -135,7 +136,7 @@
           , use_spaces: options_form.use_spaces.checked
           });
 
-          $('#generate .password').text(sentence.password);
+          $('.mainb .password').text(sentence.password);
 
           var entropy = sentence.entropy.toFixed(1)
             , possibles = Math.pow(2, sentence.entropy - 1) // on average, only half the possibilities will be needed.  so -1 exponent
@@ -154,32 +155,30 @@
               val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
             }
             return val;
-          }
+          };
 
-          $('.footer .entropy').html(entropy + " bits of entropy");
+          $('.stats .entropy').html(entropy + " bits of entropy");
           // $('.footer .years').html((possibles / small_guesses_per_year).toFixed(1) + " years to guess at 1000 guesses/second");
-          $('.footer .seconds').html(commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
-          $('.footer .minutes').html(commaSeparateNumber((possibles / large_guesses_per_minutes).toFixed(1)) + " minutes");
-          $('.footer .hours').html(commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
-          $('.footer .days').html(commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
-          $('.footer .years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
-          $('.footer .entropy').css("border", "2px solid yellow");
-          $('.footer .worstcase').html("Worst case scenario:");
-          $('.footer .worstcase').css("border-bottom", "1px solid white");
-          $('.footer .footer_text').html("Assuming that someone is capable of guessing passwords at the rate of a trillion (1,000,000,000,000) key/second, a search on 50% of the total keyspace will take:");
+          $('.stats .seconds').html(commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
+          $('.stats .minutes').html(commaSeparateNumber((possibles / large_guesses_per_minutes).toFixed(1)) + " minutes");
+          $('.stats .hours').html(commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
+          $('.stats .days').html(commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
+          $('.stats .years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
+          $('.stats .worstcase').html("Worst case scenario:");
+          $('.stats .worstcase').css("border-bottom", "1px solid white");
+          $('.stats .worstcasetext').html("Assuming that someone is capable of guessing passwords at the rate of a trillion (1,000,000,000,000) key/second, a search on 50% of the total keyspace will take:");
         }
       , reset_password = function() {
-          $('#generate .password').text("Click Generate to generate a new password");
-          $('.footer .entropy').html("");
-          $('.footer .seconds').html("");
-          $('.footer .minutes').html("");
-          $('.footer .hours').html("");
-          $('.footer .days').html("");
-          $('.footer .years').html("");
-          $('.footer .footer_text').html("");
-          $('.worstcase').html("");
-          $('.entropy').css("border", "none");
-          $('.worstcase').css("border", "none"); 
+          $('.mainb .password').text("Click Generate to generate a new password");
+          $('.stats .entropy').html("");
+          $('.stats .seconds').html("");
+          $('.stats .minutes').html("");
+          $('.stats .hours').html("");
+          $('.stats .days').html("");
+          $('.stats .years').html("");
+          $('.stats .worstcase').html("");
+          $('.stats .worstcasetext').html("");
+          $('.stats .worstcase').css("border", "none"); 
         };
     // Check checkboxes
     $('input[type="checkbox"]:checked').parent('label').addClass('active');
@@ -195,21 +194,10 @@
     $('#reset_button').click(reset_password);
 
     if ( events_left == 0 ) {
-      $('#more_entropy').hide();
-      $('#generate').show();
+      $('.entropy_mouse').hide();
+      $('.mainb').show();
       generate_password();
     }
-
-    $('#toggle_options_button').click(function() {
-      $('.toggleOptions').hide();
-      $('#options').fadeIn();
-    });
-
-    $('.enable_diceware').click(function() {
-      $('#toggle_options_button').click();
-      $('#options [name=diceware]').prop('checked', true);
-      generate_password();
-    });
 
     var add_entropy = function(x, y, ms) {
       reminder_elem.removeClass('visible');
@@ -220,8 +208,8 @@
       random.addEntropy(x + y + ms);
       events_left--;
       if (  events_left == 0 ) {
-        $('#more_entropy').hide();
-        $('#generate').show();
+        $('.entropy_mouse').hide();
+        $('.mainb').show();
         generate_password();
       }
       else if ( events_left > 0 && events_left % 10 == 0 )

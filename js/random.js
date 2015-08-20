@@ -13,11 +13,11 @@
 
     function seedOracle(buffer) {
       return Crypto.SHA256(buffer + 'seed');
-    }
+    };
 
     function outputOracle(buffer) {
       return Crypto.SHA256(buffer + 'output');
-    }
+    };
 
     function random_2(bits) {
       var output = getRandomBuffer();
@@ -25,7 +25,7 @@
         throw new Error('not enough bits in buffer');
       var hex = output.slice(0, Math.ceil(bits/4));
       return parseInt(hex, 16);
-    }
+    };
 
     function updateLocalStorage() {
       if ( that.ready() ) {
@@ -33,8 +33,8 @@
         // You must rehash the buffer after (or before) outputting the hash.
         // Otherwise you may get the same result again and again.
         buffer = seedOracle(buffer);
-      }
-    }
+      };
+    };
 
     function updateLocalStorageTimeout() {
       updateLocalStorage()
@@ -90,7 +90,7 @@
      */
     this.ready = function() {
       return events_left <= 0;
-    }
+    };
 
     /**
      * Add some entropy to the internal buffer.
@@ -98,14 +98,14 @@
     this.addEntropy = function(entropy) {
       events_left--;
       buffer = seedOracle(buffer + entropy);
-    }
+    };
 
     // Main
     if ( local_storage.random_seed ) {
       /* we've got a seed from last time, add time to it just in case...*/
       buffer = seedOracle(localStorage.random_seed + (new Date()).valueOf());
       events_left = TOTAL_EVENTS = 0;
-    }
+    };
   };
   exports.random = new exports.RandomGen();
 })(window);

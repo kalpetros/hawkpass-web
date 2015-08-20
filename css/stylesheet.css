@@ -24,9 +24,9 @@ body {
   	height: auto !important;
 	height: 100%;
 	/* Negative indent footer by its height */
-	margin: 0 auto -450px;
+	margin: 0 auto -60px;
 	/* Pad bottom by footer height */
-	padding: 0 0 450px;
+	padding: 0 0 60px;
 }
 .header {
 	width: 100%;
@@ -110,13 +110,13 @@ body {
 		border-color: yellow;
 	}
 .buttons {
-	height: 100%;
+	height: 50px;
 	width: 80%;
 	margin: 5% 0 0 10%;
 }
 	.button {
 		background-color: yellow;
-		height: 50px;
+		height: 100%;
 		width: 48%;
 		border-style: none;
 		font-family: 'Lato', sans-serif;
@@ -128,13 +128,67 @@ body {
 		.button:hover {
 			background-color: white;
 		}
+.wrap_stats {
+	background-color: rgba(255, 255, 255, 0.1);
+	height: 100%;
+	width: 80%;
+	border-radius: 20px;
+	margin: 5% 0 0 10%;
+}
+.stats {
+	height: 100%;
+	width: 100%;
+}
+	.stats p {
+		width: 100%;
+		text-align: center;
+	}
+	.entropy {
+		font-family: 'Lato', sans-serif;
+		font-size: 3em;
+		color: white;
+	}
+	.seconds, .minutes, .hours, .days, .years {
+		font-family: 'Lato', sans-serif;
+		font-size: 1em;
+		color: white;
+		margin: 1% 0 0 0;
+	}
+	.worstcase {
+		font-family: 'Lato', sans-serif;
+		font-size: 1.5em;
+		color: white;
+		border-bottom: 1px solid white;
+	}
+	.worstcasetext {
+		color: white;
+	}
+.entropy_text {
+	font-family: 'Lato', sans-serif;
+	font-size: 3em;
+	text-align: center;
+	color: white;
+	width: 80%;
+	margin: 20% 0 0 10%;
+}
+.entropy_bar {
+	background-color: rgba(255, 255, 255, 0.2);
+	height: 150px;
+	width: 80%;
+    margin: 5% 0 0 10%;
+    border: 5px solid #ddd;
+}
+	.entropy_bar > div {
+    	background-color: rgba(255, 255, 0 ,0.5);
+        height: 140px;
+	}
 .footer {
 	background-color: rgba(255, 255, 255, 0.1);
-	height: 450px;
+	height: 60px;
 }
 	.f_left {
 		height: 100%;
-		width: 35%;
+		width: 20%;
 		float: left;
 		margin: 0 0 0 0;
 	}
@@ -144,7 +198,7 @@ body {
 	}
 	.f_middle {
 		height: 100%;
-		width: 30%;
+		width: 60%;
 		float: left;
 		margin: 0 0 0 0;
 	}
@@ -154,7 +208,7 @@ body {
 	}
 	.f_right {
 		height: 100%;
-		width: 35%;
+		width: 20%;
 		float: right;
 		margin: 0 0 0 0;
 	}
@@ -162,41 +216,17 @@ body {
 		width: 100%;
 		text-align: center;
 	}
-	.worstcase {
-		font-family: 'Lato', sans-serif;
-		font-size: 1.5em;
-		color: white;
-		margin: 2% 0 0 0;
-		border-bottom: 1px solid white;
-	}
-	.footer_text {
-		color: white;
-		margin: 2% 0 0 0;
-	}
-	.entropy {
-		font-family: 'Lato', sans-serif;
-		font-size: 3em;
-		color: white;
-		margin: 10% 0 0 0;
-		border: 2px solid yellow;
-	}
-	.seconds, .minutes, .hours, .days, .years {
-		font-family: 'Lato', sans-serif;
-		font-size: 1em;
-		color: white;
-		margin: 2% 0 0 0;
-	}
 	.credit {
 		font-family: 'Lato', sans-serif;
 		font-size: 1em;
 		color: white;
-		margin-top: 60%;
+		line-height: 50px;
 	}
 	.attr {
 		font-family: 'Lato', sans-serif;
 		font-size: 1em;
 		color: white;
-		margin-top: 60%;
+		line-height: 50px;
 	}
 		.attr i {
 			padding-left: 10px;
