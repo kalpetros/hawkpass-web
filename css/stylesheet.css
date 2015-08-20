@@ -1,0 +1,203 @@
+/* Hawkpass */
+/* Strong random password generator */
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Light.ttf');
+}
+a {
+	text-decoration: none !important;
+}
+html {
+	height: 100%;
+}
+body {
+	background-image: url('../images/background.jpg');
+	background-color: #2b2b2b !important;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+  	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by its height */
+	margin: 0 auto -450px;
+	/* Pad bottom by footer height */
+	padding: 0 0 450px;
+}
+.header {
+	width: 100%;
+}
+	.title {
+		background-color: rgba(255, 255, 255, 0);
+		font-family: 'Lato', sans-serif;
+		font-size: 3em;
+		color: white;
+		float: left;
+		margin: 1% 0 0 2%;
+		border: none;
+	}
+	.menu {
+		background-color: rgba(255, 255, 255, 0);
+		font-family: 'Lato', sans-serif;
+		font-size: 2em;
+		color: white;
+		float: right;
+		margin: 1% 2% 0 0;
+		border: none;
+	}
+.container {
+  	width: 100%;
+}
+.output_box, .pref_box {
+	background-color: rgba(255, 255, 255, 0.4);
+	width: 80%;
+}
+.output_box {
+	height: 150px auto;
+	margin: 10% 0 0 10%;
+	border: 10px solid yellow;
+}
+	.password {
+		font-family: 'Lato', sans-serif;
+		font-size: 3em;
+		color: black;
+		text-align: center;
+		line-height: 130px;
+	}
+.pref_box {
+	height: auto;
+	margin: 5% 0 0 10%;
+	border-top: 10px solid yellow;
+}
+.btn-group {
+	height: 100%;
+	width: 100%;
+}
+	.btn {
+		font-family: 'Lato', sans-serif;
+		height: 100%;
+		width: 20.08%;
+		border-radius: 0 !important;
+	}
+	.btn-custom {
+  		background-color: rgba(255, 255, 0, 0.5);
+  		border-color: rgba(255, 255, 0, 0.5);
+	}
+	.btn-custom:hover,
+	.btn-custom:focus,
+	.btn-custom:active,
+	.btn-custom.active {
+		background-color: #e6e600;
+		border-color: #cccc00;
+	}
+	.btn-custom.disabled:hover,
+	.btn-custom.disabled:focus,
+	.btn-custom.disabled:active,
+	.btn-custom.disabled.active,
+	.btn-custom[disabled]:hover,
+	.btn-custom[disabled]:focus,
+	.btn-custom[disabled]:active,
+	.btn-custom[disabled].active,
+	fieldset[disabled] .btn-custom:hover,
+	fieldset[disabled] .btn-custom:focus,
+	fieldset[disabled] .btn-custom:active,
+	fieldset[disabled] .btn-custom.active {
+		background-color: yellow;
+		border-color: yellow;
+	}
+.buttons {
+	height: 100%;
+	width: 80%;
+	margin: 5% 0 0 10%;
+}
+	.button {
+		background-color: yellow;
+		height: 50px;
+		width: 48%;
+		border-style: none;
+		font-family: 'Lato', sans-serif;
+		font-size: 1em;
+		color: black;
+		float: left;
+		margin: 0 1% 0 1%;
+	}
+		.button:hover {
+			background-color: white;
+		}
+.footer {
+	background-color: rgba(255, 255, 255, 0.1);
+	height: 450px;
+}
+	.f_left {
+		height: 100%;
+		width: 35%;
+		float: left;
+		margin: 0 0 0 0;
+	}
+	.f_left p {
+		width: 100%;
+		text-align: center;
+	}
+	.f_middle {
+		height: 100%;
+		width: 30%;
+		float: left;
+		margin: 0 0 0 0;
+	}
+	.f_middle p {
+		width: 100%;
+		text-align: center;
+	}
+	.f_right {
+		height: 100%;
+		width: 35%;
+		float: right;
+		margin: 0 0 0 0;
+	}
+	.f_right p {
+		width: 100%;
+		text-align: center;
+	}
+	.worstcase {
+		font-family: 'Lato', sans-serif;
+		font-size: 1.5em;
+		color: white;
+		margin: 2% 0 0 0;
+		border-bottom: 1px solid white;
+	}
+	.footer_text {
+		color: white;
+		margin: 2% 0 0 0;
+	}
+	.entropy {
+		font-family: 'Lato', sans-serif;
+		font-size: 3em;
+		color: white;
+		margin: 10% 0 0 0;
+		border: 2px solid yellow;
+	}
+	.seconds, .minutes, .hours, .days, .years {
+		font-family: 'Lato', sans-serif;
+		font-size: 1em;
+		color: white;
+		margin: 2% 0 0 0;
+	}
+	.credit {
+		font-family: 'Lato', sans-serif;
+		font-size: 1em;
+		color: white;
+		margin-top: 60%;
+	}
+	.attr {
+		font-family: 'Lato', sans-serif;
+		font-size: 1em;
+		color: white;
+		margin-top: 60%;
+	}
+		.attr i {
+			padding-left: 10px;
+		}
