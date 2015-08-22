@@ -1,9 +1,34 @@
+// Copyright 2011 Gavin Wahl, Colin Thomas-Arnold, Fusionbox. Modified by Petros Kalogiannakis. All rights reserved.
+
+// Redistribution and use in source and binary forms, with or without modification, are
+// permitted provided that the following conditions are met:
+
+//   1. Redistributions of source code must retain the above copyright notice, this list of
+//      conditions and the following disclaimer.
+
+//   2. Redistributions in binary form must reproduce the above copyright notice, this list
+//      of conditions and the following disclaimer in the documentation and/or other materials
+//      provided with the distribution.
+
+// THIS SOFTWARE IS PROVIDED BY FUSIONBOX ''AS IS'' AND ANY EXPRESS OR IMPLIED
+// WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+// FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL FUSIONBOX OR
+// CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+// ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+// NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+// ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+// The views and conclusions contained in the software and documentation are those of the
+// authors and should not be interpreted as representing official policies, either expressed
+// or implied, of Fusionbox.
 (function(exports, $) {
   var TOTAL_EVENTS = 500
     , events_left = TOTAL_EVENTS;
 
   if ( random.ready() ) {
-    events_left = 400;
+    events_left = 0;
   };
 
   function parseOptions(options) {
@@ -140,16 +165,16 @@
 
           var entropy = sentence.entropy.toFixed(1)
             , possibles = Math.pow(2, sentence.entropy - 1) // on average, only half the possibilities will be needed.  so -1 exponent
-            //, small_guesses_per_year = 1000 * 3600*24*365
-            , large_guesses_per_seconds = 1e11 * 1
-            , large_guesses_per_minutes = 1e11 * 60
-            , large_guesses_per_hour = 1e11 * 3600
-            , large_guesses_per_days = 1e11 * 86400
-            , large_guesses_per_years = 1e11 * 31536000
-            , large_guesses_per_lifespan = 1e11 * 2522880000
-            , large_guesses_per_millenia = 1e11 * 31536000000
-            , large_guesses_per_universe = 1e11 * 3600*(13.798+0.037)*(10^9);
-
+            // 1e12 = 1x10^12 (1 trillion)
+            , large_guesses_per_seconds = 1e12 * 1
+            , large_guesses_per_minutes = 1e12 * 60
+            , large_guesses_per_hour = 1e12 * 3600
+            , large_guesses_per_days = 1e12 * 86400
+            , large_guesses_per_years = 1e12 * 31536000
+            , large_guesses_per_lifespan = 1e12 * 2522880000
+            , large_guesses_per_millenia = 1e12 * 31536000000
+            , large_guesses_per_universe = 1e12 * 3600*(13.798+0.037)*(10^9);
+          // Seperate numbers with commas
           function commaSeparateNumber(val){
             while (/(\d+)(\d{3})/.test(val.toString())){
               val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
@@ -158,12 +183,11 @@
           };
 
           $('.stats .entropy').html(entropy + " bits of entropy");
-          // $('.footer .years').html((possibles / small_guesses_per_year).toFixed(1) + " years to guess at 1000 guesses/second");
-          $('.stats .seconds').html(commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
-          $('.stats .minutes').html(commaSeparateNumber((possibles / large_guesses_per_minutes).toFixed(1)) + " minutes");
-          $('.stats .hours').html(commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
-          $('.stats .days').html(commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
-          $('.stats .years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
+          $('.stats .seconds').html("~ " + commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
+          $('.stats .minutes').html("~ " + commaSeparateNumber((possibles / large_guesses_per_minutes).toFixed(1)) + " minutes");
+          $('.stats .hours').html("~ " + commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
+          $('.stats .days').html("~ " + commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
+          $('.stats .years').html("~ " + commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
           $('.stats .worstcase').html("Worst case scenario:");
           $('.stats .worstcase').css("border-bottom", "1px solid white");
           $('.stats .worstcasetext').html("Assuming that someone is capable of guessing passwords at the rate of a trillion (1,000,000,000,000) key/second, a search on 50% of the total keyspace will take:");

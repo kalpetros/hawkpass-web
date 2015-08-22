@@ -7,6 +7,9 @@
 a {
 	text-decoration: none !important;
 }
+blockquote {
+	font-size: 1em !important;
+}
 html {
 	height: 100%;
 }
@@ -19,6 +22,7 @@ body {
   	background-size: cover;
 	height: 100%;
 }
+/* Wraps body up to footer */
 .wrapper {
 	min-height: 100%;
   	height: auto !important;
@@ -28,6 +32,7 @@ body {
 	/* Pad bottom by footer height */
 	padding: 0 0 60px;
 }
+/* Header */
 .header {
 	width: 100%;
 }
@@ -52,6 +57,7 @@ body {
 .container {
   	width: 100%;
 }
+/* Password and Preferences boxes */
 .output_box, .pref_box {
 	background-color: rgba(255, 255, 255, 0.4);
 	width: 80%;
@@ -63,7 +69,7 @@ body {
 }
 	.password {
 		font-family: 'Lato', sans-serif;
-		font-size: 3em;
+		font-size: 250%;
 		color: black;
 		text-align: center;
 		line-height: 130px;
@@ -73,6 +79,7 @@ body {
 	margin: 5% 0 0 10%;
 	border-top: 10px solid yellow;
 }
+/* Preferences box buttons */
 .btn-group {
 	height: 100%;
 	width: 100%;
@@ -109,6 +116,7 @@ body {
 		background-color: yellow;
 		border-color: yellow;
 	}
+/* Generate and Reset button */
 .buttons {
 	height: 50px;
 	width: 80%;
@@ -128,6 +136,7 @@ body {
 		.button:hover {
 			background-color: white;
 		}
+/* Entropy stats */
 .wrap_stats {
 	background-color: rgba(255, 255, 255, 0.1);
 	height: 100%;
@@ -163,6 +172,7 @@ body {
 	.worstcasetext {
 		color: white;
 	}
+/* First screen / Mouse entropy */
 .entropy_text {
 	font-family: 'Lato', sans-serif;
 	font-size: 3em;
@@ -182,6 +192,7 @@ body {
     	background-color: rgba(255, 255, 0 ,0.5);
         height: 140px;
 	}
+/* Footer */
 .footer {
 	background-color: rgba(255, 255, 255, 0.1);
 	height: 60px;
