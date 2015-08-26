@@ -190,7 +190,7 @@
           $('.stats .days').html("~ " + commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
           $('.stats .years').html("~ " + commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
           $('.stats .worstcase').html("Worst case scenario:");
-          $('.stats .worstcase').css("border-bottom", "1px solid white");
+          $('.stats .worstcase').css("border-bottom", "1px solid #009966");
           $('.stats .worstcasetext').html("Assuming that someone is capable of guessing passwords at the rate of a trillion (1,000,000,000,000) key/second, a search on 50% of the total keyspace will take:");
         }
       , reset_password = function() {
@@ -209,10 +209,10 @@
     $('input[type="checkbox"]:checked').parent('label').addClass('active');
     // Tooltip
     $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
+      $('[data-toggle="tooltip"]').tooltip();
+    });
     // Popover
-    $('.fa-info-circle').popover(options)
+    $('.fa-info-circle').popover(options);
 
     $('#generate_button').click(generate_password);
 
