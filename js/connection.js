@@ -1,13 +1,8 @@
 $(document).ready(function() {
-	// Detect https/http
-	if (window.location.protocol != "https:") {
-    	var connection = 'http';
-	}
-
-    // Alert users when they've lost internet connectivity and show if their connection is secure (https, http)
-    window.addEventListener('load', function(e) {
+// Alert users when they've lost internet connectivity and show if their connection is secure (https, http)
+	window.addEventListener('load', function(e) {
         if (navigator.onLine) {
-        	if (connection === 'https') {
+        	if (document.location.protocol === 'https:') {
 		        $('.secure').html("Secure");
 		        $('.secure').attr('data-original-title', "You are using https");
 		        $('.secure').css("background-color", "#3bbadc");
@@ -34,7 +29,7 @@ $(document).ready(function() {
     }, false);
 
     window.addEventListener('online', function(e) {
-    	if (connection === 'https') {
+    	if (document.location.protocol === 'https:') {
 	        $('.secure').html("Secure");
 	        $('.secure').attr('data-original-title', "You are using https");
 	        $('.secure').css("background-color", "#3bbadc");
