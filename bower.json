@@ -1,0 +1,29 @@
+{
+  "name": "hawkpass",
+  "homepage": "https://github.com/kalpetros/hawkpass",
+  "authors": [
+    "Petros Kalogiannakis <kalpetros@gmail.com>"
+  ],
+  "description": "Strong random password generator",
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "hawkpass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "bootstrap": "^3.3.6",
+    "Materialize": "materialize#^0.97.5",
+    "font-awesome": "fontawesome#^4.5.0"
+  }
+}

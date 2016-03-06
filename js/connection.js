@@ -5,21 +5,21 @@ $(document).ready(function() {
         	if (document.location.protocol === 'https:') {
 		        $('.secure').html("Secure");
 		        $('.secure').attr('data-original-title', "You are using https");
-		        $('.secure').css("background-color", "#3bbadc");
+		        $('.secure').css("background-color", "#009688");
 		    } else {
 		        $('.secure').html("Not secure");
 		        $('.secure').attr('data-original-title', "Switch to https");
-		        $('.secure').css("background-color", "#d9534f");
+		        $('.secure').css("background-color", "#e57373");
 		    }
             $('.status').html("Online");
-            $('.status').css("background-color", "#009966");
+            $('.status').css("background-color", "#009688");
         } else {
             $('.status').html("Offline");
-            $('.status').css("background-color", "#d9534f");
+            $('.status').css("background-color", "#009688");
 
             $('.secure').html("Secure");
 	        $('.secure').attr('data-original-title', "You are using https");
-	        $('.secure').css("background-color", "#3bbadc");
+	        $('.secure').css("background-color", "#009688");
         }
     }, false);
 
@@ -27,22 +27,22 @@ $(document).ready(function() {
     	if (document.location.protocol === 'https:') {
 	        $('.secure').html("Secure");
 	        $('.secure').attr('data-original-title', "You are using https");
-	        $('.secure').css("background-color", "#3bbadc");
+	        $('.secure').css("background-color", "#009688");
 	    } else {
 	        $('.secure').html("Not secure");
 	        $('.secure').attr('data-original-title', "Switch to https");
-	        $('.secure').css("background-color", "#d9534f");
+	        $('.secure').css("background-color", "#e57373");
 	    }
         $('.status').html("Online");
-        $('.status').css("background-color", "#009966");
+        $('.status').css("background-color", "#009688");
     }, false);
 
     window.addEventListener('offline', function(e) {
         $('.status').html("Offline");
-        $('.status').css("background-color", "#d9534f");
+        $('.status').css("background-color", "#009688");
 
         $('.secure').html("Secure");
         $('.secure').attr('data-original-title', "You are using https");
-        $('.secure').css("background-color", "#3bbadc");
+        $('.secure').css("background-color", "#009688");
     }, false);
 });

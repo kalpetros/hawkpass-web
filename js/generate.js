@@ -1,4 +1,4 @@
-// Copyright 2011 Gavin Wahl, Colin Thomas-Arnold, Fusionbox. 
+// Copyright 2011 Gavin Wahl, Colin Thomas-Arnold, Fusionbox.
 // Modified by Petros Kalogiannakis. All rights reserved.
 
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -139,8 +139,8 @@
   };
 
   $(document).ready(function() {
-    var more_entropy_progress_div = $('.entropy_mouse .entropy_bar div')
-      , reminder_elem = $('.entropy_mouse .reminder')
+    var more_entropy_progress_div = $('.entropy_box .entropy_bar div')
+      , reminder_elem = $('.entropy_box .reminder')
       , show_reminder = function() { reminder_elem.addClass('visible'); }
       , reminder_timeout = null
       , generate_password = function() {
@@ -162,7 +162,7 @@
           , use_spaces: options_form.use_spaces.checked
           });
 
-          $('.mainb .password').text(sentence.password);
+          $('.main_page .password').text(sentence.password);
 
           var entropy = sentence.entropy.toFixed(1)
             , possibles = Math.pow(2, sentence.entropy - 1) // on average, only half the possibilities will be needed.  so -1 exponent
@@ -182,28 +182,27 @@
             }
             return val;
           };
-
+          $('.stats_box').show();
           $('.stats .entropy').html(entropy + " bits of entropy");
-          $('.stats .seconds').html("~ " + commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
-          $('.stats .minutes').html("~ " + commaSeparateNumber((possibles / large_guesses_per_minutes).toFixed(1)) + " minutes");
-          $('.stats .hours').html("~ " + commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
-          $('.stats .days').html("~ " + commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
-          $('.stats .years').html("~ " + commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
-          $('.stats .worstcase').html("Worst case scenario:");
-          $('.stats .worstcase').css("border-bottom", "1px solid #009966");
+          $('.stats .worstcase').html("Worst case scenario");
           $('.stats .worstcasetext').html("Assuming that someone is capable of guessing passwords at the rate of a trillion (1,000,000,000,000) key/second, a search on 50% of the total keyspace will take:");
-        }
+          $('.stats .seconds').html(commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
+          $('.stats .minutes').html(commaSeparateNumber((possibles / large_guesses_per_minutes).toFixed(1)) + " minutes");
+          $('.stats .hours').html(commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
+          $('.stats .days').html(commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
+          $('.stats .years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
+      }
       , reset_password = function() {
-          $('.mainb .password').text("Click Generate to generate a new password");
-          $('.stats .entropy').html("");
-          $('.stats .seconds').html("");
-          $('.stats .minutes').html("");
-          $('.stats .hours').html("");
-          $('.stats .days').html("");
-          $('.stats .years').html("");
-          $('.stats .worstcase').html("");
-          $('.stats .worstcasetext').html("");
-          $('.stats .worstcase').css("border", "none"); 
+          $('.main_page .password').html("Click <kbd>Generate</kbd> to generate a new password");
+          $('.stats .entropy').empty();
+          $('.stats .worstcase').empty();
+          $('.stats .worstcasetext').empty();
+          $('.stats .seconds').empty();
+          $('.stats .minutes').empty();
+          $('.stats .hours').empty();
+          $('.stats .days').empty();
+          $('.stats .years').empty();
+          $('.stats_box').hide();
         };
     // Check checkboxes
     $('input[type="checkbox"]:checked').parent('label').addClass('active');
@@ -219,8 +218,8 @@
     $('#reset_button').click(reset_password);
 
     if ( events_left == 0 ) {
-      $('.entropy_mouse').hide();
-      $('.mainb').show();
+      $('.entropy_box').hide();
+      $('.main_page').show();
       generate_password();
     }
 
@@ -233,8 +232,8 @@
       random.addEntropy(x + y + ms);
       events_left--;
       if (  events_left == 0 ) {
-        $('.entropy_mouse').hide();
-        $('.mainb').show();
+        $('.entropy_box').hide();
+        $('.main_page').show();
         generate_password();
       }
       else if ( events_left > 0 && events_left % 10 == 0 )

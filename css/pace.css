@@ -61,8 +61,8 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
   top: 7px;
   height: 14px;
   font-size: 12px;
-  background: yellow;
-  color: yellow;
+  background: white;
+  color: white;
   line-height: 60px;
   font-weight: bold;
   font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -187,7 +187,7 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
   width: 100%;
   height: 28px;
   z-index: 2001;
-  box-shadow: inset 0 0 0 2px yellow, inset 0 0 0 7px yellow;
+  box-shadow: inset 0 0 0 2px white, inset 0 0 0 7px white;
 }
 
 .pace.pace-inactive {

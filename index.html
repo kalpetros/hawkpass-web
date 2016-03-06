@@ -1,28 +1,34 @@
-<!DOCTYPE html>
 <!-- Hawkpass -->
 <!-- Strong random password generator -->
+<!DOCTYPE html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Hawkpass | Secure Passphrase Generator</title>
+		<title>Hawkpass | Secure Password Generator</title>
 		<link rel="canonical" href="https://kalpetros.github.io/hawkpass" />
 		<meta name="description" content="Hawkpass is a Diceware based password generator that uses your mouse movements to generate secure easy-to-remember passwords." />
-  		<meta name="keywords" content="strong password generator, secure password generator" />
+		<meta name="keywords" content="strong password generator, secure password generator" />
 		<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
 		<!-- Core styles -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 		<!-- Third party styles -->
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/Materialize/dist/css/materialize.min.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/pace.css">
 	</head>
 	<body>
 		<div class="wrapper">
-			<div class="header">
-				<a class="title" data-toggle="modal" data-target=".about"><i class="fa fa-lock"></i>Hawkpass</a>
-				<a class="menu" data-toggle="modal" data-target=".hawkpass"><i class="fa fa-bars"></i></a>
-			</div>
+			<nav>
+		    <div class="nav-wrapper">
+		      <a class="brand-logo center"><i class="fa fa-lock"></i> Hawkpass</a>
+		      <ul id="nav-mobile" class="left hide-on-med-and-down">
+		        <li><a href="badges.html" data-toggle="modal" data-target=".about"><i class="fa fa-info"></i></a></li>
+		        <li><a data-toggle="modal" data-target=".hawkpass"><i class="fa fa-question"></i></a></li>
+		      </ul>
+		    </div>
+		  </nav>
 			<!-- Modal (About) -->
 			<div class="modal fade about" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   				<div class="modal-dialog modal-lg">
@@ -130,13 +136,13 @@
 				</div>
 			</div>
 			<div class="container">
-				<div class="mainb" style="display: none;">
-					<div class="output_box">
+				<div class="main_page" style="display: none;">
+					<div class="password_box">
 						<div id="generate">
 							<div class="password"></div>
 						</div>
 					</div>
-					<div class="pref_box">
+					<div class="preferences_box">
 						<form id="options" class="btn-group" data-toggle="buttons">
 							<label class="btn btn-custom" title="0, 1, 2, ...">
 						    	<input type="checkbox" name="use_number">Numbers
@@ -155,24 +161,57 @@
 						    </label>
 						</form>
 					</div>
-					<div class="buttons">
-						<button class="button" id="generate_button">Generate</button>
-						<button class="button" id="reset_button">Reset</button>
+					<div class="button_box">
+						<button class="waves-effect waves-light btn-large generate blue-grey darken-2" id="generate_button" type="submit" name="action">Generate</button>
+						<button class="waves-effect waves-light btn-large reset blue-grey darken-2" id="reset_button" type="submit" name="action">Reset</button>
 					</div>
-					<div class="wrap_stats">
-						<div class="stats">
-							<p class="entropy"></p>
-							<p class="worstcase"></p>
-							<p class="worstcasetext"></p>
-							<p class="seconds"></p>
-							<p class="minutes"></p>
-							<p class="hours"></p>
-							<p class="days"></p>
-							<p class="years"></p>
+					<div class="stats_box">
+						<div class="left_side">
+							<div class="stats">
+								<div class="stats_entropy left">
+						      <div class="col s12 m5">
+						        <div class="card-panel red lighten-1">
+						          <span class="white-text entropy"></span>
+						        </div>
+										<div class="card blue-grey darken-1">
+					            <div class="card-content white-text">
+					              <span class="card-title worstcase"></span>
+					              <p class="worstcasetext"></p>
+					            </div>
+					            <div class="card-action">
+					              <a href="#">Show</a>
+					            </div>
+					          </div>
+						      </div>
+						    </div>
+							</div>
+						</div>
+						<div class="right_side">
+							<div class="stats">
+								<div class="stats_scenario_time right">
+									<div class="col s12 m5">
+						        <div class="card-panel red lighten-2">
+						          <span class="white-text seconds"></span>
+						        </div>
+										<div class="card-panel red lighten-2">
+						          <span class="white-text minutes"></span>
+						        </div>
+										<div class="card-panel red lighten-2">
+						          <span class="white-text hours"></span>
+						        </div>
+										<div class="card-panel red lighten-2">
+						          <span class="white-text days"></span>
+						        </div>
+										<div class="card-panel red lighten-2">
+						          <span class="white-text years"></span>
+						        </div>
+						      </div>
+						    </div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="entropy_mouse">
+				<div class="entropy_box">
 					<p class="entropy_text">Move your mouse to add entropy</p>
       			<div class="entropy_bar">
       				<div style="width: 0"></div>
@@ -182,7 +221,7 @@
 		</div>
 		<div class="footer">
 			<div class="f_left">
-				<p class="text-muted credit">Hawkpass (version: 1.3.2-Alpha)</p>
+				<p class="text-muted credit">Hawkpass (version: 1.0.0-alpha.5)</p>
 			</div>
 			<div class="f_right">
 				<p class="secure" data-toggle="tooltip" data-placement="top"></p>
@@ -190,15 +229,16 @@
 			</div>
 		</div>
 		<!-- jQuery -->
-		<script src="js/jquery.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap Javascript -->
-	    <script src="js/bootstrap.js"></script>
-	    <!-- Core Javascript -->
-	    <script src="js/pace.min.js"></script>
-	    <script src="js/connection.js"></script>
-	    <script src="js/crypto-sha256.js"></script>
-	    <script src="js/random.js"></script>
-	    <script src="js/wordlist.js"></script>
-	    <script src="js/generate.js"></script>
+    <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Core Javascript -->
+    <script src="js/pace.min.js"></script>
+    <script src="js/connection.js"></script>
+    <script src="js/crypto-sha256.js"></script>
+    <script src="js/random.js"></script>
+    <script src="js/wordlist.js"></script>
+    <script src="js/generate.js"></script>
 	</body>
 </html>
