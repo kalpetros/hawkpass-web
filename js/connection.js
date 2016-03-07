@@ -8,7 +8,7 @@ $(document).ready(function() {
 		        $('.secure').css("background-color", "#009688");
 		    } else {
 		        $('.secure').html("Not secure");
-		        $('.secure').attr('data-original-title', "Switch to https");
+		        $('.secure').attr('data-original-title', "Switch to https or disable your internet connection");
 		        $('.secure').css("background-color", "#e57373");
 		    }
             $('.status').html("Online");
@@ -18,7 +18,7 @@ $(document).ready(function() {
             $('.status').css("background-color", "#009688");
 
             $('.secure').html("Secure");
-	        $('.secure').attr('data-original-title', "You are using https");
+	        $('.secure').attr('data-original-title', "Your internet connection is disabled");
 	        $('.secure').css("background-color", "#009688");
         }
     }, false);
@@ -30,7 +30,7 @@ $(document).ready(function() {
 	        $('.secure').css("background-color", "#009688");
 	    } else {
 	        $('.secure').html("Not secure");
-	        $('.secure').attr('data-original-title', "Switch to https");
+	        $('.secure').attr('data-original-title', "Switch to https or disable your internet connection");
 	        $('.secure').css("background-color", "#e57373");
 	    }
         $('.status').html("Online");
@@ -42,7 +42,7 @@ $(document).ready(function() {
         $('.status').css("background-color", "#009688");
 
         $('.secure').html("Secure");
-        $('.secure').attr('data-original-title', "You are using https");
+        $('.secure').attr('data-original-title', "Your internet connection is disabled");
         $('.secure').css("background-color", "#009688");
     }, false);
 });

@@ -1,5 +1,11 @@
-<!-- Hawkpass -->
-<!-- Strong random password generator -->
+<!--
+## Hawkpass
+## Strong random password generator
+## Created by: Petros Kalogiannakis (@kalpetros)
+## Created: 20 August 2015
+## Updated: 8 March 2016
+## Licence: MIT
+-->
 <!DOCTYPE html>
 	<head>
 		<meta charset="UTF-8">
@@ -9,14 +15,17 @@
 		<meta name="description" content="Hawkpass is a Diceware based password generator that uses your mouse movements to generate secure easy-to-remember passwords." />
 		<meta name="keywords" content="strong password generator, secure password generator" />
 		<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+		<!-- Styles -->
 		<!-- Core styles -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-		<!-- Third party styles -->
+		<!-- Namespaced Bootstrap compiled using LESS to avoid clashing with materialize framework -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-custom.css">
+		<!-- 3rd party styles -->
 		<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/Materialize/dist/css/materialize.min.css">
-		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/pace.css">
+		<!-- End of Styles -->
 	</head>
 	<body>
 		<div class="wrapper">
@@ -24,53 +33,12 @@
 		    <div class="nav-wrapper">
 		      <a class="brand-logo center"><i class="fa fa-lock"></i> Hawkpass</a>
 		      <ul id="nav-mobile" class="left hide-on-med-and-down">
-		        <li><a href="badges.html" data-toggle="modal" data-target=".about"><i class="fa fa-info"></i></a></li>
+		        <li><a href="https://github.com/kalpetros/hawkpass">Fork me on <i class="fa fa-github"></i></a></li>
 		        <li><a data-toggle="modal" data-target=".hawkpass"><i class="fa fa-question"></i></a></li>
 		      </ul>
 		    </div>
 		  </nav>
-			<!-- Modal (About) -->
-			<div class="modal fade about" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  				<div class="modal-dialog modal-lg">
-    				<div class="modal-content">
-    					<div class="modal-header">
-    						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					    	<h4 class="modal-title" id="myModalLabel">Hawkpass</h4>
-					    </div>
-					    <!-- Modal Content -->
-					    <div class="modal-body">
-					    	<div class="panel panel-default">
-								<div class="panel-heading">What is Hawkpass?</div>
-									<div class="panel-body">
-										<p>Hawkpass uses a cryptographically secure random number generator based on your mouse movements to generate easy to remember passwords based on the Diceware list.</p>
-									</div>
-								</div>
-					    	<div class="panel panel-default">
-									<div class="panel-heading">This project is open source!</div>
-									<div class="panel-body">
-										<p>The source code is available on <a href="https://github.com/kalpetros/hawkpass"><i class="fa fa-github"></i> Github</a>.</p>
-							    	<p>Feel free to review, clone, fork and modify the code and if you feel that something is missing or you found a bug open an <a href="https://github.com/kalpetros/hawkpass/issues/new">issue</a> or create a pull request.</p>
-							    	<p><b>Version: 1.3.2-Alpha</b></p>
-									</div>
-								</div>
-					    	<div class="panel panel-default">
-									<div class="panel-heading">Credits</div>
-									<div class="panel-body">
-										<p>Inspired by: <a href="http://world.std.com/~reinhold/diceware.html">Diceware</a> by <a href="http://world.std.com/~reinhold/">Arnold G. Reinhold</a>, <a href="https://github.com/fusionbox/mouseware">Mouseware</a> by <a href="https://github.com/fusionbox">Fusionbox</a></p>
-										<p>Created by: Petros Kalogiannakis (<a href="https://twitter.com/kalpetross">@kalpetross</a>)</p>
-										<p><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a></p>
-	      						<p><a href="http://getbootstrap.com/">Bootstrap</a></p></p>
-	      						<p><a href="https://xkcd.com/936/">XKCD</a></p>
-									</div>
-								</div>
-					    </div>
-					    <div class="modal-footer">
-					    	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							</div>
-    				</div>
-  				</div>
-			</div>
-			<!-- Modal (Hawkpass) -->
+			<!-- Modal (FAQ) -->
 			<div class="modal fade hawkpass" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
@@ -81,6 +49,18 @@
 				    <!-- Modal Content -->
 				    <div class="modal-body">
 		    			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingZero">
+							  		<h4 class="panel-title">
+							    		<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseZero" aria-expanded="true" aria-controls="collapseZero">What is Hawkpass?</a>
+							  		</h4>
+									</div>
+									<div id="collapseZero" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingZero">
+								  		<div class="panel-body">
+												Hawkpass uses a cryptographically secure random number generator based on your mouse movements to generate easy to remember passwords based on the Diceware list.
+								  		</div>
+									</div>
+								</div>
 								<div class="panel panel-default">
 									<div class="panel-heading" role="tab" id="headingOne">
 							  		<h4 class="panel-title">
@@ -135,6 +115,8 @@
   				</div>
 				</div>
 			</div>
+			<!-- End of Modal (FAQ) -->
+			<!-- Container -->
 			<div class="container">
 				<div class="main_page" style="display: none;">
 					<div class="password_box">
@@ -143,23 +125,26 @@
 						</div>
 					</div>
 					<div class="preferences_box">
-						<form id="options" class="btn-group" data-toggle="buttons">
-							<label class="btn btn-custom" title="0, 1, 2, ...">
-						    	<input type="checkbox" name="use_number">Numbers
-						    </label>
-						  	<label class="btn btn-custom" title="!, @, #, ...">
-						    	<input type="checkbox" name="use_symbol">Symbols
-						    </label>
-						  	<label class="btn btn-custom" title="Include spaces between words">
-						    	<input type="checkbox" name="use_spaces">Spaces
-						    </label>
-						    <label class="btn btn-custom" title="Use the diceware wordlist">
-						    	<input type="checkbox" name="diceware" checked>Diceware
-						    </label>
-						    <label class="btn btn-custom" title="Include more words">
-						    	<input type="checkbox" name="use_more_words">More words
-						    </label>
-						</form>
+						<!-- Uses Bootstrap -->
+						<div class="bootstrap">
+							<form id="options" class="btn-group" data-toggle="buttons">
+								<label class="btn btn-custom" title="0, 1, 2, ...">
+							    	<input type="checkbox" name="use_number">Numbers
+							    </label>
+							  	<label class="btn btn-custom" title="!, @, #, ...">
+							    	<input type="checkbox" name="use_symbol">Symbols
+							    </label>
+							  	<label class="btn btn-custom" title="Include spaces between words">
+							    	<input type="checkbox" name="use_spaces">Spaces
+							    </label>
+							    <label class="btn btn-custom" title="Use the diceware wordlist">
+							    	<input type="checkbox" name="diceware">Diceware
+							    </label>
+							    <label class="btn btn-custom" title="Include more words">
+							    	<input type="checkbox" name="use_more_words">More words
+							    </label>
+							</form>
+						</div>
 					</div>
 					<div class="button_box">
 						<button class="waves-effect waves-light btn-large generate blue-grey darken-2" id="generate_button" type="submit" name="action">Generate</button>
@@ -221,16 +206,17 @@
 		</div>
 		<div class="footer">
 			<div class="f_left">
-				<p class="text-muted credit">Hawkpass (version: 1.0.0-alpha.5)</p>
+				<p class="text-muted credit"><i class="fa fa-code-fork"></i> 1.0.0-alpha.5</p>
 			</div>
 			<div class="f_right">
 				<p class="secure" data-toggle="tooltip" data-placement="top"></p>
 				<p class="status"></p>
 			</div>
 		</div>
-		<!-- jQuery -->
+		<!-- End of Container -->
+		<!-- JavaScript files -->
+		<!-- 3rd Party Javascript -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<!-- Bootstrap Javascript -->
     <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Core Javascript -->
@@ -240,5 +226,6 @@
     <script src="js/random.js"></script>
     <script src="js/wordlist.js"></script>
     <script src="js/generate.js"></script>
+		<!-- End of JavaScript files -->
 	</body>
 </html>

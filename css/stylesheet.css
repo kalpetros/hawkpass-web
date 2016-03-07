@@ -1,5 +1,11 @@
-/* Hawkpass */
-/* Strong random password generator */
+/*
+## Hawkpass
+## Strong random password generator
+## Created by: Petros Kalogiannakis (@kalpetros)
+## Created: 20 August 2015
+## Updated: 8 March 2016
+## Licence: MIT
+*/
 a {
 	text-decoration: none !important;
 }
@@ -89,7 +95,7 @@ body {
 }
 .btn {
 	height: 100%;
-	width: 20.08%;
+	width: 20%;
 	border-radius: 0 !important;
 }
 .btn-custom {
