@@ -2,47 +2,34 @@ $(document).ready(function() {
 // Alert users when they've lost internet connectivity and show if their connection is secure (https, http)
 	window.addEventListener('load', function(e) {
         if (navigator.onLine) {
-        	if (document.location.protocol === 'https:') {
-		        $('.secure').html("Secure");
-		        $('.secure').attr('data-original-title', "You are using https");
-		        $('.secure').css("background-color", "#009688");
-		    } else {
-		        $('.secure').html("Not secure");
-		        $('.secure').attr('data-original-title', "Switch to https or disable your internet connection");
-		        $('.secure').css("background-color", "#e57373");
-		    }
-            $('.status').html("Online");
-            $('.status').css("background-color", "#009688");
+	      	if (document.location.protocol === 'https:') {
+		        $('.secure').html("Yout connection is secure.");
+						$('footer').addClass("indigo");
+		    	} else {
+		        $('.secure').html("Your connection is not secure. Switch to https or disable your internet connection.");
+		    	}
+      	$('.status').html("You are appear to be online.");
         } else {
-            $('.status').html("Offline");
-            $('.status').css("background-color", "#009688");
-
-            $('.secure').html("Secure");
-	        $('.secure').attr('data-original-title', "Your internet connection is disabled");
-	        $('.secure').css("background-color", "#009688");
+        	$('.status').html("You are appear to be offline.");
+          $('.secure').html("Your connection is secure.");
+					$('footer').addClass("indigo");
         }
     }, false);
 
     window.addEventListener('online', function(e) {
     	if (document.location.protocol === 'https:') {
-	        $('.secure').html("Secure");
-	        $('.secure').attr('data-original-title', "You are using https");
-	        $('.secure').css("background-color", "#009688");
+	      $('.secure').html("Your connection is secure.");
+				$('footer').addClass("indigo");
 	    } else {
-	        $('.secure').html("Not secure");
-	        $('.secure').attr('data-original-title', "Switch to https or disable your internet connection");
-	        $('.secure').css("background-color", "#e57373");
+	      $('.secure').html("Your connection is not secure. Switch to https or disable your internet connection.");
+				$('footer').removeClass("indigo");
 	    }
-        $('.status').html("Online");
-        $('.status').css("background-color", "#009688");
+      $('.status').html("You are appear to be online.");
     }, false);
 
     window.addEventListener('offline', function(e) {
-        $('.status').html("Offline");
-        $('.status').css("background-color", "#009688");
-
-        $('.secure').html("Secure");
-        $('.secure').attr('data-original-title', "Your internet connection is disabled");
-        $('.secure').css("background-color", "#009688");
+	    $('.status').html("You are appear to be offline.");
+	    $('.secure').html("Your connection is secure.");
+			$('footer').addClass("indigo");
     }, false);
 });

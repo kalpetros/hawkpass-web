@@ -183,39 +183,21 @@
             }
             return val;
           };
-          $('.stats_box').show();
-          $('.stats .entropy').html(entropy + " bits of entropy");
-          $('.stats .worstcase').html("Worst case scenario");
-          $('.stats .worstcasetext').html("Assuming that someone is capable of guessing passwords at the rate of a trillion (1,000,000,000,000) key/second, a search on 50% of the total keyspace will take:");
-          $('.stats .seconds').html(commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
-          $('.stats .minutes').html(commaSeparateNumber((possibles / large_guesses_per_minutes).toFixed(1)) + " minutes");
-          $('.stats .hours').html(commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
-          $('.stats .days').html(commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
-          $('.stats .years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
+          $('.stats').show();
+          $('.entropy').html(entropy + " bits of entropy");
+          $('.worstcase').html("Worst case scenario");
+          $('.worstcasetext').html("Assuming that someone is capable of guessing passwords at the rate of a trillion (1,000,000,000,000) key/second, a search on 50% of the total keyspace will take:");
+          $('.seconds').html(commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
+          $('.minutes').html(commaSeparateNumber((possibles / large_guesses_per_minutes).toFixed(1)) + " minutes");
+          $('.hours').html(commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
+          $('.days').html(commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
+          $('.years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
       }
       , reset_password = function() {
           $('.main_page .password').html("Click <kbd>Generate</kbd> to generate a new password");
-          $('.stats .entropy').empty();
-          $('.stats .worstcase').empty();
-          $('.stats .worstcasetext').empty();
-          $('.stats .seconds').empty();
-          $('.stats .minutes').empty();
-          $('.stats .hours').empty();
-          $('.stats .days').empty();
-          $('.stats .years').empty();
-          $('.stats_box').hide();
+          $('.stats').hide();
         };
-    // Check checkboxes
-    $('input[type="checkbox"]:checked').parent('label').addClass('active');
-    // Tooltip
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-    // Popover
-    $('.fa-info-circle').popover(options);
-
     $('#generate_button').click(generate_password);
-
     $('#reset_button').click(reset_password);
 
     if ( events_left == 0 ) {

@@ -3,7 +3,7 @@
 ## Strong random password generator
 ## Created by: Petros Kalogiannakis (@kalpetros)
 ## Created: 20 August 2015
-## Updated: 8 March 2016
+## Updated: 24 April 2016
 ## Licence: MIT
 -->
 <!DOCTYPE html>
@@ -13,14 +13,13 @@
 		<title>Hawkpass | Secure Password Generator</title>
 		<link rel="canonical" href="https://kalpetros.github.io/hawkpass" />
 		<meta name="description" content="Hawkpass is a Diceware based password generator that uses your mouse movements to generate secure easy-to-remember passwords." />
-		<meta name="keywords" content="strong password generator, secure password generator" />
+		<meta name="keywords" content="strong password generator, secure password generator, diceware, random, secure" />
+		<meta name="author" content="kalpetros" />
 		<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
 		<!-- Styles -->
 		<!-- Core styles -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-		<!-- Namespaced Bootstrap compiled using LESS to avoid clashing with materialize framework -->
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-custom.css">
 		<!-- 3rd party styles -->
 		<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/Materialize/dist/css/materialize.min.css">
@@ -28,197 +27,131 @@
 		<!-- End of Styles -->
 	</head>
 	<body>
-		<div class="wrapper">
+		<!-- Header -->
+		<header>
+			<!-- Navbar -->
 			<nav>
-		    <div class="nav-wrapper">
+		    <div class="nav-wrapper indigo">
 		      <a class="brand-logo center"><i class="fa fa-lock"></i> Hawkpass</a>
 		      <ul id="nav-mobile" class="left hide-on-med-and-down">
 		        <li><a href="https://github.com/kalpetros/hawkpass">Fork me on <i class="fa fa-github"></i></a></li>
-		        <li><a data-toggle="modal" data-target=".hawkpass"><i class="fa fa-question"></i></a></li>
 		      </ul>
 		    </div>
-		  </nav>
-			<!-- Modal (FAQ) -->
-			<div class="modal fade hawkpass" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				    		<h4 class="modal-title" id="myModalLabel">Frequently Asked Questions</h4>
-				    </div>
-				    <!-- Modal Content -->
-				    <div class="modal-body">
-		    			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingZero">
-							  		<h4 class="panel-title">
-							    		<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseZero" aria-expanded="true" aria-controls="collapseZero">What is Hawkpass?</a>
-							  		</h4>
-									</div>
-									<div id="collapseZero" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingZero">
-								  		<div class="panel-body">
-												Hawkpass uses a cryptographically secure random number generator based on your mouse movements to generate easy to remember passwords based on the Diceware list.
-								  		</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingOne">
-							  		<h4 class="panel-title">
-							    		<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Entropy</a>
-							  		</h4>
-									</div>
-									<div id="collapseOne" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-								  		<div class="panel-body">
-								    		Think of entropy as randomness. In computing, entropy is the randomness collected from hardware sources, mouse movements or randomness generators for use in cryptography.
-						    				<blockquote>Entropy is a measure of the uncertainty or randomness of a system. The concept is a difficult one to grasp fully and is confusing, even to experts. Strictly speaking, any given passphrase has an entropy of zero because it is already chosen. It is the method you use to randomly select your passphrase that has entropy. Entropy tells how hard it will be to guess the passphrase itself even if an attacker knows the method you used to select your passphrase. A passphrase is more secure if it is selected using a method that has more entropy.</br>
-											Entropy is measured in bits. The outcome of a single coin toss -- "heads or tails" -- has one bit of entropy.</br></br>
- 											<small><cite>Arnold G. Reinhold - Diceware <a href="http://world.std.com/~reinhold/dicewarefaq.html#entropy" target="_blank">FAQ</a></cite></small>
-												</blockquote>
-								  		</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingTwo">
-							  		<h4 class="panel-title">
-							    		<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">True randomness</a>
-							  		</h4>
-									</div>
-									<div id="collapseTwo" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingTwo">
-							  		<div class="panel-body">
-							  			People don't tend to use password generators because they feel they can come up with very strong "random" password themeselves. But the truth is that we humans are species of patterns and we can't do anything randomly. Even if you think you choose a phrase made from completely random words this phrase is influenced by the probability of a phrase occuring in natural language. [<a href="http://www.jbonneau.com/doc/BS12-USEC-passphrase_linguistics.pdf">1</a>]
-							  			</br></br>
-							  			You can also use a computer to generate a password but how secure is that?</br>
-							  			Most random numbers generated by computers are pseudo-random i.e. they are generated using a mathematical formula, which is predictable.</br></br>
-							    		The only true randomness is the one that comes from nature. One example of true randomness is atmospheric noise.
-							    		A software that uses randomness derived from nature is much more secure than a software with computer generated randomness. [<a href="https://www.random.org/">2</a>]
-							  		</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingThree">
-							  		<h4 class="panel-title">
-							    		<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Is it safe to use?</a>
-							  		</h4>
-									</div>
-									<div id="collapseThree" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingThree">
-							  		<div class="panel-body">
-							  			Everything is running locally in your browser. None of the passwords generated here are sent anywhere. Once the main page is loaded you can even run the application without an internet connection.
-							    		This application is just HTML, CSS and Javascript. There is nothing running on a server and no code (jQuery, Bootstrap) is served from a Content Delivery Network (CDN).
-							  		</div>
-									</div>
-								</div>
-							</div>
-				    </div>
-				    <div class="modal-footer">
-			    		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						</div>
-  				</div>
-				</div>
-			</div>
-			<!-- End of Modal (FAQ) -->
+	  	</nav>
+			<!-- End of Navbar -->
+		</header>
+		<!-- End of Header -->
+		<!-- Main -->
+		<main>
 			<!-- Container -->
-			<div class="container">
-				<div class="main_page" style="display: none;">
-					<div class="password_box">
-						<div id="generate">
-							<div class="password"></div>
+			<div class="container main_page" style="display: none;">
+				<div class="row">
+					<div class="col s12 m12">
+						<div class="section">
+							<div class="row">
+		      			<div class="col s12 m12">
+		        			<div class="card-panel center hoverable">
+		          			<span class="password">
+		          			</span>
+		        			</div>
+		      			</div>
+		    			</div>
 						</div>
-					</div>
-					<div class="preferences_box">
-						<!-- Uses Bootstrap -->
-						<div class="bootstrap">
-							<form id="options" class="btn-group" data-toggle="buttons">
-								<label class="btn btn-custom" title="0, 1, 2, ...">
-							    	<input type="checkbox" name="use_number">Numbers
-							    </label>
-							  	<label class="btn btn-custom" title="!, @, #, ...">
-							    	<input type="checkbox" name="use_symbol">Symbols
-							    </label>
-							  	<label class="btn btn-custom" title="Include spaces between words">
-							    	<input type="checkbox" name="use_spaces">Spaces
-							    </label>
-							    <label class="btn btn-custom" title="Use the diceware wordlist">
-							    	<input type="checkbox" name="diceware">Diceware
-							    </label>
-							    <label class="btn btn-custom" title="Include more words">
-							    	<input type="checkbox" name="use_more_words">More words
-							    </label>
-							</form>
+						<div class="section center">
+							<form id="options">
+						    <p>
+						      <input type="checkbox" id="number" name="use_number" />
+						      <label for="number">Numbers</label>
+						    </p>
+								<p>
+						      <input type="checkbox" id="symbols" name="use_symbol" />
+						      <label for="symbols">Symbols</label>
+						    </p>
+								<p>
+						      <input type="checkbox" id="spaces" name="use_spaces" />
+						      <label for="spaces">Spaces</label>
+						    </p>
+								<p>
+						      <input type="checkbox" id="diceware" name="diceware" />
+						      <label for="diceware">Diceware</label>
+						    </p>
+								<p>
+						      <input type="checkbox" id="morewords" name="use_more_words" />
+						      <label for="morewords">More words</label>
+						    </p>
+						  </form>
 						</div>
-					</div>
-					<div class="button_box">
-						<button class="waves-effect waves-light btn-large generate blue-grey darken-2" id="generate_button" type="submit" name="action">Generate</button>
-						<button class="waves-effect waves-light btn-large reset blue-grey darken-2" id="reset_button" type="submit" name="action">Reset</button>
-					</div>
-					<div class="stats_box">
-						<div class="left_side">
-							<div class="stats">
-								<div class="stats_entropy left">
-						      <div class="col s12 m5">
-						        <div class="card-panel red lighten-1">
-						          <span class="white-text entropy"></span>
-						        </div>
-										<div class="card blue-grey darken-1">
-					            <div class="card-content white-text">
-					              <span class="card-title worstcase"></span>
-					              <p class="worstcasetext"></p>
-					            </div><!--
-					            <div class="card-action">
-					              <a href="#">Show</a>
-					            </div>-->
-					          </div>
-						      </div>
-						    </div>
-							</div>
+						<div class="section center">
+							<button class="waves-effect waves-light btn-large generate indigo" id="generate_button" type="submit" name="action">Generate</button>
+							<button class="waves-effect waves-light btn-large reset red lighten-2" id="reset_button" type="submit" name="action">Reset</button>
 						</div>
-						<div class="right_side">
-							<div class="stats">
-								<div class="stats_scenario_time right">
-									<div class="col s12 m5">
-						        <div class="card-panel red lighten-2">
-						          <span class="white-text seconds"></span>
-						        </div>
-										<div class="card-panel red lighten-2">
-						          <span class="white-text minutes"></span>
-						        </div>
-										<div class="card-panel red lighten-2">
-						          <span class="white-text hours"></span>
-						        </div>
-										<div class="card-panel red lighten-2">
-						          <span class="white-text days"></span>
-						        </div>
-										<div class="card-panel red lighten-2">
-						          <span class="white-text years"></span>
-						        </div>
-						      </div>
-						    </div>
-							</div>
+						<div class="section stats">
+		        	<div class="card-panel blue-grey white-text center">
+		          	<span class="entropy"></span>
+		        	</div>
+							<div class="card center">
+		            <div class="card-content">
+		              <span class="card-title worstcase"></span>
+		              <p class="worstcasetext"></p>
+		            </div>
+								<table class="centered">
+					        <thead>
+					          <tr>
+				              <th data-field="seconds">Seconds</th>
+				              <th data-field="minutes">Minutes</th>
+				              <th data-field="hours">Hours</th>
+											<th data-field="days">Days</th>
+											<th data-field="years">Years</th>
+					          </tr>
+					        </thead>
+					        <tbody>
+					          <tr>
+					            <td class="seconds"></td>
+											<td class="minutes"></td>
+											<td class="hours"></td>
+											<td class="days"></td>
+											<td class="years"></td>
+					          </tr>
+					        </tbody>
+					      </table>
+		          </div>
 						</div>
 					</div>
 				</div>
-				<div class="entropy_box">
-					<p class="entropy_text">Move your mouse to add entropy</p>
-      			<div class="entropy_bar">
-      				<div style="width: 0"></div>
-      			</div>
-  			</div>
 			</div>
-		</div>
-		<div class="footer">
-			<div class="f_left">
-				<p class="text-muted credit"><i class="fa fa-code-fork"></i> 1.0.0-alpha.5</p>
+			<div class="entropy_box center">
+				<p class="flow-text">Move your mouse to add entropy</p>
+				<div class="entropy_bar">
+					<div style="width: 0"></div>
+				</div>
 			</div>
-			<div class="f_right">
-				<p class="secure" data-toggle="tooltip" data-placement="top"></p>
-				<p class="status"></p>
-			</div>
-		</div>
-		<!-- End of Container -->
+			<!-- End of Container -->
+		</main>
+		<!-- End of Main -->
+		<!-- Footer -->
+		<footer class="page-footer">
+      <div class="container center">
+        <div class="row">
+					<div class="col s12 m6">
+						<p class="status white-text"></p>
+					</div>
+          <div class="col s12 m6">
+						<p class="secure white-text"></p>
+					</div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        <a class="white-text" href="https://github.com/kalpetros/hawkpass/blob/master/LICENCE">© MIT</a>
+				<p class="grey-text text-lighten-4 right"><i class="fa fa-code-fork"></i> 1.0.0-alpha.6</p>
+        </div>
+      </div>
+    </footer>
+		<!-- End of Footer -->
 		<!-- JavaScript files -->
 		<!-- 3rd Party Javascript -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Core Javascript -->
     <script src="js/pace.min.js"></script>
     <script src="js/connection.js"></script>

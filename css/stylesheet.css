@@ -3,189 +3,28 @@
 ## Strong random password generator
 ## Created by: Petros Kalogiannakis (@kalpetros)
 ## Created: 20 August 2015
-## Updated: 8 March 2016
+## Updated: 24 April 2016
 ## Licence: MIT
 */
-a {
-	text-decoration: none !important;
-}
-kbd {
-	background-color: #fff !important;
-	color: black !important;
-}
-html {
-	height: 100%;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	text-size-adjust: none;
-}
+/* Sticky footer */
 body {
-	background-image: url('../images/background.png');
-	background-color: #282c34 !important;
-	height: 100%;
+	 display: flex;
+	 min-height: 100vh;
+	 flex-direction: column;
+ }
+ main {
+	 flex: 1 0 auto;
+ }
+ /* Preferences */
+#options p {
+	display: inline-block;
+	margin-left: 2%;
 }
-/* Wraps body up to footer */
-.wrapper {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	/* Negative indent footer by its height */
-	margin: 0 auto -60px;
-	/* Pad bottom by footer height */
-	padding: 0 0 60px;
-}
-.nav-wrapper {
-  background: #455a64;
-}
-/* Password, Preferences, Button and Stats boxes */
-.password_box, .preferences_box {
-	background-color: #455a64;
-	width: 80%;
-}
-.password_box {
-	height: 150px auto;
-	margin: 5% 0 0 10%;
-	border-top: 10px solid #eceff1;
-}
-.password {
-  font-size: 250%;
-	color: white;
-	text-align: center;
-	line-height: 130px;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-}
-.preferences_box {
-	height: auto;
-	margin: 2% 0 0 10%;
-	border-top: 10px solid #eceff1;
-}
-.button_box {
-  width: 100%;
-  margin: 2% 0 0 10%;
-}
-.stats_box {
-  width: 100%;
-  margin: 2% 0 0 10%;
-}
-.left_side {
-  width: 40%;
-  float: left;
-}
-.right_side {
-  width: 40%;
-  float: left;
-}
-.left {
-  width: 98%;
-  text-align: center;
-}
-.right {
-  width: 98%;
-  text-align: center;
-}
-/* Preferences box buttons */
-.btn-group {
-	height: 100%;
-	width: 100%;
-}
-.btn {
-	height: 100%;
-	width: 20%;
-	border-radius: 0 !important;
-}
-.btn-custom {
-	background-color: #455a64 !important;
-	border-color: rgba(255, 255, 0, 0.5);
-}
-.btn-custom:hover,
-.btn-custom:focus,
-.btn-custom:active,
-.btn-custom.active {
-	background-color: #eceff1 !important;
-	color: black;
-	border-color: #eceff1 !important;
-}
-.btn-custom.disabled:hover,
-.btn-custom.disabled:focus,
-.btn-custom.disabled:active,
-.btn-custom.disabled.active,
-.btn-custom[disabled]:hover,
-.btn-custom[disabled]:focus,
-.btn-custom[disabled]:active,
-.btn-custom[disabled].active,
-fieldset[disabled] .btn-custom:hover,
-fieldset[disabled] .btn-custom:focus,
-fieldset[disabled] .btn-custom:active,
-fieldset[disabled] .btn-custom.active {
-	background-color: #eceff1 !important;
-	border-color: #eceff1 !important;
-}
-/* Generate & Reset Button */
-.generate,
-.reset {
-  width: 40%;
-}
-/* Entropy stats */
+/* Entropy bar */
 .entropy_bar {
-	background-color: rgba(255, 255, 255, 0.2);
-	height: 150px;
-	width: 80%;
-  margin: 5% 0 0 10%;
-  border: 5px solid #ddd;
+	height: 200px;
 }
 .entropy_bar > div {
-	background-color: rgba(255, 255, 0 ,0.5);
-  height: 140px;
-}
-/* Footer */
-.footer {
-	background-color: rgba(255, 255, 255, 0.1);
-	height: 60px;
-}
-.f_left {
-	height: 100%;
-	width: 50%;
-	float: left;
-	margin: 0 0 0 0;
-}
-.f_left p {
-	width: 100%;
-}
-.f_right {
-	height: 100%;
-	width: 50%;
-	float: right;
-	margin: 0 0 0 0;
-}
-.f_right p {
-	width: 100%;
-}
-.credit {
-	font-family: 'Lato', sans-serif;
-	font-size: 1em;
-	color: white;
-	line-height: 60px;
-	margin: 0 0 0 5%;
-}
-.secure, .status {
-	height: 100% !important;
-	width: 10% !important;
-	font-family: 'Lato', sans-serif;
-	font-size: 1em;
-	color: white;
-	text-align: center;
-	line-height: 60px;
-	float: right;
-	border-top: 2px solid yellow;
-}
-.secure {
-	margin: 0 5% 0 0;
-}
-.status {
-	margin: 0 2% 0 0;
+	background-color: rgba(63, 81, 181, 0.5);
+  height: 100%;
 }
