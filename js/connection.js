@@ -3,14 +3,14 @@ $(document).ready(function() {
 	window.addEventListener('load', function(e) {
         if (navigator.onLine) {
 	      	if (document.location.protocol === 'https:') {
-		        $('.secure').html("Yout connection is secure.");
+		        $('.secure').html("Yout connection is secure. You are using https.");
 						$('footer').addClass("indigo");
 		    	} else {
 		        $('.secure').html("Your connection is not secure. Switch to https or disable your internet connection.");
 		    	}
-      	$('.status').html("You are appear to be online.");
+      	$('.status').html("You appear to be online.");
         } else {
-        	$('.status').html("You are appear to be offline.");
+        	$('.status').html("You appear to be offline.");
           $('.secure').html("Your connection is secure.");
 					$('footer').addClass("indigo");
         }
@@ -18,17 +18,17 @@ $(document).ready(function() {
 
     window.addEventListener('online', function(e) {
     	if (document.location.protocol === 'https:') {
-	      $('.secure').html("Your connection is secure.");
+	      $('.secure').html("Your connection is secure. You are using https.");
 				$('footer').addClass("indigo");
 	    } else {
 	      $('.secure').html("Your connection is not secure. Switch to https or disable your internet connection.");
 				$('footer').removeClass("indigo");
 	    }
-      $('.status').html("You are appear to be online.");
+      $('.status').html("You appear to be online.");
     }, false);
 
     window.addEventListener('offline', function(e) {
-	    $('.status').html("You are appear to be offline.");
+	    $('.status').html("You appear to be offline.");
 	    $('.secure').html("Your connection is secure.");
 			$('footer').addClass("indigo");
     }, false);
