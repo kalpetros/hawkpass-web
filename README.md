@@ -8,4 +8,4 @@ For increased entropy there are options to replace a random letter with a symbol
 
 # Live version
 
-For a live version of this application go to https://petroskal.com/hawkpass/
+For a live version of this application go to https://www.petroskal.com/hawkpass/
