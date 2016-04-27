@@ -11,7 +11,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Hawkpass | Secure Password Generator</title>
-		<link rel="canonical" href="https://kalpetros.github.io/hawkpass" />
+		<link rel="canonical" href="https://petroskal.com/hawkpass" />
 		<meta name="description" content="Hawkpass is a Diceware based password generator that uses your mouse movements to generate secure easy-to-remember passwords." />
 		<meta name="keywords" content="strong password generator, secure password generator, diceware, random, secure" />
 		<meta name="author" content="kalpetros" />
@@ -52,7 +52,7 @@
 							<div class="row">
 		      			<div class="col s12 m12">
 		        			<div class="card-panel center hoverable">
-		          			<span class="password">
+		          			<span class="password" id="password">
 		          			</span>
 		        			</div>
 		      			</div>
@@ -84,6 +84,7 @@
 						</div>
 						<div class="section center">
 							<button class="waves-effect waves-light btn-large generate indigo" id="generate_button" type="submit" name="action">Generate</button>
+							<button class="waves-effect waves-light btn-large clipboard teal darken-4" data-clipboard-target="#password">Copy to clipboard</button>
 							<button class="waves-effect waves-light btn-large reset red lighten-2" id="reset_button" type="submit" name="action">Reset</button>
 						</div>
 						<div class="section stats">
@@ -155,6 +156,7 @@
 		<!-- 3rd Party Javascript -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+		<script src="bower_components/clipboard/dist/clipboard.min.js"></script>
     <!-- Core Javascript -->
     <script src="js/pace.min.js"></script>
     <script src="js/connection.js"></script>
@@ -162,6 +164,7 @@
     <script src="js/random.js"></script>
     <script src="js/wordlist.js"></script>
     <script src="js/generate.js"></script>
+		<script src="js/functions.js"></script>
 		<!-- End of JavaScript files -->
 	</body>
 </html>

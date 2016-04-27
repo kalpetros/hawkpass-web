@@ -183,6 +183,7 @@
             }
             return val;
           };
+          $('.clipboard').show();
           $('.stats').show();
           $('.entropy').html(entropy + " bits of entropy");
           $('.worstcase').html("Worst case scenario");
@@ -195,6 +196,7 @@
       }
       , reset_password = function() {
           $('.main_page .password').html("Click <kbd>Generate</kbd> to generate a new password");
+          $('.clipboard').hide();
           $('.stats').hide();
         };
     $('#generate_button').click(generate_password);
