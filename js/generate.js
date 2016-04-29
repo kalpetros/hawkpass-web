@@ -183,7 +183,10 @@
             }
             return val;
           };
-          $('.clipboard').show();
+          $('.clipboard').removeClass('disabled');
+          $('.reset').removeClass('disabled');
+          $('.clipboard').addClass('clipboard_button');
+          $('.reset').addClass('reset_button');
           $('.stats').show();
           $('.entropy').html(entropy + " bits of entropy");
           $('.worstcase').html("Worst case scenario");
@@ -195,12 +198,15 @@
           $('.years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
       }
       , reset_password = function() {
-          $('.main_page .password').html("Click <kbd>Generate</kbd> to generate a new password");
-          $('.clipboard').hide();
+          $('.main_page .password').html('Click <div class="chip">Generate</div> to generate a new password.');
           $('.stats').hide();
+          $('.clipboard').addClass('disabled');
+          $('.reset').addClass('disabled');
+          $('.clipboard').removeClass('clipboard_button');
+          $('.reset').removeClass('reset_button');
         };
-    $('#generate_button').click(generate_password);
-    $('#reset_button').click(reset_password);
+    $('.generate_button').click(generate_password);
+    $('.reset_button').click(reset_password);
 
     if ( events_left == 0 ) {
       $('.entropy_box').hide();

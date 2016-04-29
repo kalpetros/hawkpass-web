@@ -3,7 +3,7 @@
 ## Strong random password generator
 ## Created by: Petros Kalogiannakis (@kalpetros)
 ## Created: 20 August 2015
-## Updated: 24 April 2016
+## Updated: 28 April 2016
 ## Licence: MIT
 */
 /* Sticky footer */
@@ -20,15 +20,20 @@ body {
 	display: inline-block;
 	margin-left: 2%;
 }
-.page-footer {
-	margin-top: 0px !important;
+/* Buttons */
+.btn-large {
+	margin-top: 2%;
 }
+/* Remove space above footer */
+.page-footer {
+	margin-top: 0 !important;
+}
+/* Entropy page */
 .entropy_box {
 	height: 100%;
 	width: 100%;
-	top: 0;
-	bottom: 0;
 }
+/* Entropy page text - vertical and horizontal alignment */
 .text {
 	top: 50%;
 	left: 50%;

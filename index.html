@@ -3,7 +3,7 @@
 ## Strong random password generator
 ## Created by: Petros Kalogiannakis (@kalpetros)
 ## Created: 20 August 2015
-## Updated: 24 April 2016
+## Updated: 28 April 2016
 ## Licence: MIT
 -->
 <!DOCTYPE html>
@@ -83,9 +83,19 @@
 						  </form>
 						</div>
 						<div class="section center">
-							<button class="waves-effect waves-light btn-large generate indigo" id="generate_button" type="submit" name="action">Generate</button>
-							<button class="waves-effect waves-light btn-large clipboard teal darken-4" data-clipboard-target="#password">Copy to clipboard</button>
-							<button class="waves-effect waves-light btn-large reset red lighten-2" id="reset_button" type="submit" name="action">Reset</button>
+							<div class="container">
+								<div class="row">
+									<div class="col s12 m4 l4">
+										<button class="waves-effect waves-light btn-large generate generate_button indigo" type="submit" name="action">Generate</button>
+									</div>
+									<div class="col s12 m4 l4">
+										<button class="waves-effect waves-light btn-large clipboard clipboard_button teal darken-4" data-clipboard-target="#password">Copy to clipboard</button>
+									</div>
+									<div class="col s12 m4 l4">
+										<button class="waves-effect waves-light btn-large reset reset_button red lighten-2" type="submit" name="action">Reset</button>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="section stats">
 		        	<div class="card-panel blue-grey white-text center">
@@ -96,7 +106,7 @@
 		              <span class="card-title worstcase"></span>
 		              <p class="worstcasetext"></p>
 		            </div>
-								<table class="centered">
+								<table class="centered responsive-table">
 					        <thead>
 					          <tr>
 				              <th data-field="seconds">Seconds</th>
@@ -147,7 +157,7 @@
       <div class="footer-copyright">
         <div class="container">
         <a class="white-text" href="https://github.com/kalpetros/hawkpass/blob/master/LICENCE">© MIT</a>
-				<p class="grey-text text-lighten-4 right"><i class="fa fa-code-fork"></i> 1.0.0-alpha.8</p>
+				<p class="grey-text text-lighten-4 right"><i class="fa fa-code-fork"></i> 1.0.0-alpha.9</p>
         </div>
       </div>
     </footer>
