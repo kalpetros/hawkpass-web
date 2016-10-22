@@ -3,7 +3,7 @@ $(document).ready(function() {
 	window.addEventListener('load', function(e) {
         if (navigator.onLine) {
 	      	if (document.location.protocol === 'https:') {
-		        $('.secure').html("Yout connection is secure. You are using https.");
+		        $('.secure').html("Your connection is secure. You are using https.");
 						$('footer').addClass("indigo");
 		    	} else {
 		        $('.secure').html("Your connection is not secure. Switch to https or disable your internet connection.");
