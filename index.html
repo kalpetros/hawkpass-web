@@ -1,10 +1,10 @@
 <!--
-## Hawkpass
-## Strong random password generator
-## Created by: Petros Kalogiannakis (@kalpetros)
-## Created: 20 August 2015
-## Updated: 28 April 2016
-## Licence: MIT
+** Hawkpass
+** Strong random password generator
+** Created by: Petros Kalogiannakis (@kalpetros)
+** Created: 20 August 2015
+** Updated: 22 October 2016
+** Licence: MIT
 -->
 <!DOCTYPE html>
 	<head>
@@ -28,7 +28,7 @@
 	</head>
 	<body>
 		<!-- Header -->
-		<header>
+		<header class="main-page" style="display: none;">
 			<!-- Navbar -->
 			<nav>
 		    <div class="nav-wrapper indigo">
@@ -45,7 +45,7 @@
 		<!-- Main -->
 		<main>
 			<!-- Container -->
-			<div class="container main_page" style="display: none;">
+			<div class="container main-page" style="display: none;">
 				<div class="row">
 					<div class="col s12 m12">
 						<div class="section">
@@ -86,19 +86,19 @@
 							<div class="container">
 								<div class="row">
 									<div class="col s12 m4 l4">
-										<button class="waves-effect waves-light btn-large generate generate_button indigo" type="submit" name="action">Generate</button>
+										<button class="waves-effect waves-light btn-large generate generate-btn indigo" type="submit" name="action">Generate</button>
 									</div>
 									<div class="col s12 m4 l4">
-										<button class="waves-effect waves-light btn-large clipboard clipboard_button teal darken-4" data-clipboard-target="#password">Copy to clipboard</button>
+										<button class="waves-effect waves-light btn-large clipboard clipboard-btn blue-grey darken-4" data-clipboard-target="#password">Copy</button>
 									</div>
 									<div class="col s12 m4 l4">
-										<button class="waves-effect waves-light btn-large reset reset_button red lighten-2" type="submit" name="action">Reset</button>
+										<button class="waves-effect waves-light btn-large reset reset-btn red lighten-2" type="submit" name="action">Reset</button>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="section stats">
-		        	<div class="card-panel blue-grey white-text center">
+		        	<div class="card-panel indigo white-text center">
 		          	<span class="entropy"></span>
 		        	</div>
 							<div class="card center">
@@ -131,9 +131,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="entropy_box center">
+			<div class="entropy-page center">
 				<p class="flow-text text">Move your mouse to add entropy</p>
-				<div class="entropy_bar">
+				<div class="entropy-bar">
 					<div style="width: 0"></div>
 				</div>
 			</div>
@@ -141,7 +141,7 @@
 		</main>
 		<!-- End of Main -->
 		<!-- Footer -->
-		<footer class="page-footer">
+		<footer class="page-footer main-page" style="display: none;">
       <div class="container center">
         <div class="row">
 					<div class="col s12 m12">
@@ -157,7 +157,7 @@
       <div class="footer-copyright">
         <div class="container">
         <a class="white-text" href="https://github.com/kalpetros/hawkpass/blob/master/LICENCE">© MIT</a>
-				<p class="grey-text text-lighten-4 right"><i class="fa fa-code-fork"></i> 1.0.0-alpha.9</p>
+				<p class="grey-text text-lighten-4 right"><a href="https://github.com/kalpetros/hawkpass/wiki/Changelog"><i class="fa fa-code-fork"></i> 1.0.0-alpha.10</a></p>
         </div>
       </div>
     </footer>

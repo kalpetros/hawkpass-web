@@ -140,8 +140,8 @@
   };
 
   $(document).ready(function() {
-    var more_entropy_progress_div = $('.entropy_box .entropy_bar div')
-      , reminder_elem = $('.entropy_box .reminder')
+    var more_entropy_progress_div = $('.entropy-page .entropy-bar div')
+      , reminder_elem = $('.entropy-page .reminder')
       , show_reminder = function() { reminder_elem.addClass('visible'); }
       , reminder_timeout = null
       , generate_password = function() {
@@ -163,7 +163,7 @@
           , use_spaces: options_form.use_spaces.checked
           });
 
-          $('.main_page .password').text(sentence.password);
+          $('.main-page .password').text(sentence.password);
 
           var entropy = sentence.entropy.toFixed(1)
             , possibles = Math.pow(2, sentence.entropy - 1) // on average, only half the possibilities will be needed.  so -1 exponent
@@ -185,7 +185,7 @@
           };
           $('.clipboard').removeClass('disabled');
           $('.reset').removeClass('disabled');
-          $('.clipboard').addClass('clipboard_button');
+          $('.clipboard').addClass('clipboard-btn');
           $('.reset').addClass('reset_button');
           $('.stats').show();
           $('.entropy').html(entropy + " bits of entropy");
@@ -198,19 +198,19 @@
           $('.years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
       }
       , reset_password = function() {
-          $('.main_page .password').html('Click <div class="chip">Generate</div> to generate a new password.');
+          $('.main-page .password').html('Click <div class="chip">Generate</div> to generate a new password.');
           $('.stats').hide();
           $('.clipboard').addClass('disabled');
           $('.reset').addClass('disabled');
-          $('.clipboard').removeClass('clipboard_button');
-          $('.reset').removeClass('reset_button');
+          $('.clipboard').removeClass('clipboard-btn');
+          $('.reset').removeClass('reset-btn');
         };
-    $('.generate_button').click(generate_password);
-    $('.reset_button').click(reset_password);
+    $('.generate-btn').click(generate_password);
+    $('.reset-btn').click(reset_password);
 
     if ( events_left == 0 ) {
-      $('.entropy_box').hide();
-      $('.main_page').show();
+      $('.entropy-page').hide();
+      $('.main-page').show();
       generate_password();
     }
 
@@ -223,8 +223,8 @@
       random.addEntropy(x + y + ms);
       events_left--;
       if (  events_left == 0 ) {
-        $('.entropy_box').hide();
-        $('.main_page').show();
+        $('.entropy-page').hide();
+        $('.main-page').show();
         generate_password();
       }
       else if ( events_left > 0 && events_left % 10 == 0 )

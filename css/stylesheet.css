@@ -1,12 +1,19 @@
 /*
-## Hawkpass
-## Strong random password generator
-## Created by: Petros Kalogiannakis (@kalpetros)
-## Created: 20 August 2015
-## Updated: 28 April 2016
-## Licence: MIT
+** Hawkpass
+** Strong random password generator
+** Created by: Petros Kalogiannakis (@kalpetros)
+** Created: 20 August 2015
+** Updated: 22 October 2016
+** Licence: MIT
 */
 /* Sticky footer */
+a,
+a:visited,
+a:hover,
+a:active,
+a:link {
+	color: #f5f5f5;
+}
 body {
 	 display: flex;
 	 min-height: 100vh;
@@ -29,8 +36,8 @@ body {
 	margin-top: 0 !important;
 }
 /* Entropy page */
-.entropy_box {
-	height: 100%;
+.entropy-page {
+	height: 100vh;
 	width: 100%;
 }
 /* Entropy page text - vertical and horizontal alignment */
@@ -42,10 +49,10 @@ body {
 	position: absolute;
 }
 /* Entropy bar */
-.entropy_bar {
+.entropy-bar {
 	height: 100%;
 }
-.entropy_bar > div {
+.entropy-bar > div {
 	background-color: rgba(63, 81, 181, 0.5);
-  height: 100%;
+  	height: 100%;
 }
