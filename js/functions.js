@@ -1,4 +1,4 @@
-var clipboard = new Clipboard('.clipboard_button');
+var clipboard = new Clipboard('.clipboard-btn');
 
 clipboard.on('success', function() {
   // Materialize.toast(message, displayLength, className, completeCallback);
