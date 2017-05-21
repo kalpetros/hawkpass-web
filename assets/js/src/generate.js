@@ -183,10 +183,6 @@
             }
             return val;
           };
-          $('.clipboard').removeClass('disabled');
-          $('.reset').removeClass('disabled');
-          $('.clipboard').addClass('clipboard-btn');
-          $('.reset').addClass('reset_button');
           $('.stats').show();
           $('.entropy').html(entropy + " bits of entropy");
           $('.seconds').html(commaSeparateNumber((possibles / large_guesses_per_seconds).toFixed(1)) + " seconds");
@@ -194,17 +190,8 @@
           $('.hours').html(commaSeparateNumber((possibles / large_guesses_per_hour).toFixed(1)) + " hours");
           $('.days').html(commaSeparateNumber((possibles / large_guesses_per_days).toFixed(1)) + " days");
           $('.years').html(commaSeparateNumber((possibles / large_guesses_per_years).toFixed(1)) + " years");
-      }
-      , reset_password = function() {
-          $('.main-page .password').html('Click <div class="chip">Generate</div> to generate a new password.');
-          $('.stats').hide();
-          $('.clipboard').addClass('disabled');
-          $('.reset').addClass('disabled');
-          $('.clipboard').removeClass('clipboard-btn');
-          $('.reset').removeClass('reset-btn');
-        };
+      };
     $('.generate-btn').click(generate_password);
-    $('.reset-btn').click(reset_password);
 
     if ( events_left == 0 ) {
       $('.entropy-page').hide();
