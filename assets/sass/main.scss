@@ -89,14 +89,11 @@ header, main, footer {
     background-color: #e0e0e0; // grey lighten-2
     padding: 40px;
     border-bottom: 5px solid #eeeeee; // grey lighten-3
+    cursor: copy;
+    &:hover {
+	background-color: #f5f5f5; // grey lighten-4
+    }
 }
-
-.copy {
-    position: absolute;
-    right: 30px;
-    cursor: pointer;
-}
-
 blockquote {
     border-left: 5px solid black !important;
 }

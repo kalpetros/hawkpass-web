@@ -8,7 +8,7 @@ $(document).ready(function() {
 		$('.connection a').removeClass().addClass('teal-text text-accent-3');
 		$('.connection i').removeClass().addClass('fa fa-lock teal-text text-accent-3');
 		$('.connection span').text('Secure connection');
-		protocol += " You are using https";
+		protocol += " You are using https.";
 	    } else {
 		$('.connection a').removeClass().addClass('red-text text-accent-3');
 		$('.connection i').removeClass().addClass('fa fa-unlock-alt red-text text-accent-3');
@@ -33,7 +33,7 @@ $(document).ready(function() {
 	    $('.connection a').removeClass().addClass('teal-text text-accent-3');
 	    $('.connection i').removeClass().addClass('fa fa-lock teal-text text-accent-3');
 	    $('.connection span').text('Secure connection');
-	    protocol += " You are using https";
+	    protocol += " You are using https.";
 	} else {
 	    $('.connection a').removeClass().addClass('red-text text-accent-3');
 	    $('.connection i').removeClass().addClass('fa fa-unlock-alt red-text text-accent-3');
