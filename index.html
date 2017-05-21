@@ -1,180 +1,180 @@
 <!--
-** Hawkpass
-** Strong random password generator
-** Created by: Petros Kalogiannakis (@kalpetros)
-** Created: 20 August 2015
-** Updated: 22 October 2016
-** Licence: MIT
--->
+    ** Hawkpass
+    ** Strong random password generator
+    ** Created by: Petros Kalogiannakis (@kalpetros)
+    ** Created: 20 August 2015
+    ** Updated: 20 May 2017
+    ** Licence: MIT
+  -->
 <!DOCTYPE html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Hawkpass | Secure Password Generator</title>
-		<link rel="canonical" href="https://petroskal.com/hawkpass" />
-		<meta name="description" content="Hawkpass is a Diceware based password generator that uses your mouse movements to generate secure easy-to-remember passwords." />
-		<meta name="keywords" content="strong password generator, secure password generator, diceware, random, secure" />
-		<meta name="author" content="kalpetros" />
-		<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
-		<!-- Styles -->
-		<!-- Core styles -->
-		<link rel="stylesheet" type="text/css" href="css/reset.css">
-		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-		<!-- 3rd party styles -->
-		<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="bower_components/Materialize/dist/css/materialize.min.css">
-		<link rel="stylesheet" type="text/css" href="css/pace.css">
-		<!-- End of Styles -->
-	</head>
-	<body>
-		<!-- Header -->
-		<header class="main-page" style="display: none;">
-			<!-- Navbar -->
-			<nav>
-		    <div class="nav-wrapper indigo">
-		      <a class="brand-logo center"><i class="fa fa-lock"></i> Hawkpass</a>
-		      <ul id="nav-mobile" class="left hide-on-med-and-down">
-		        <li><a href="https://github.com/kalpetros/hawkpass">Fork me on <i class="fa fa-github"></i></a></li>
-						<li><a href="https://github.com/kalpetros/hawkpass-desktop/releases"><i class="fa fa-desktop" aria-hidden="true"></i> Download desktop app</a></li>
-					</ul>
-		    </div>
-	  	</nav>
-			<!-- End of Navbar -->
-		</header>
-		<!-- End of Header -->
-		<!-- Main -->
-		<main>
-			<!-- Container -->
-			<div class="container main-page" style="display: none;">
-				<div class="row">
-					<div class="col s12 m12">
-						<div class="section">
-							<div class="row">
-		      			<div class="col s12 m12">
-		        			<div class="card-panel center hoverable">
-		          			<span class="password" id="password">
-		          			</span>
-		        			</div>
-		      			</div>
-		    			</div>
-						</div>
-						<div class="section center">
-							<form id="options">
-						    <p>
-						      <input type="checkbox" id="number" name="use_number" />
-						      <label for="number">Numbers</label>
-						    </p>
-								<p>
-						      <input type="checkbox" id="symbols" name="use_symbol" />
-						      <label for="symbols">Symbols</label>
-						    </p>
-								<p>
-						      <input type="checkbox" id="spaces" name="use_spaces" />
-						      <label for="spaces">Spaces</label>
-						    </p>
-								<p>
-						      <input type="checkbox" id="diceware" name="diceware" />
-						      <label for="diceware">Diceware</label>
-						    </p>
-								<p>
-						      <input type="checkbox" id="morewords" name="use_more_words" />
-						      <label for="morewords">More words</label>
-						    </p>
-						  </form>
-						</div>
-						<div class="section center">
-							<div class="container">
-								<div class="row">
-									<div class="col s12 m4 l4">
-										<button class="waves-effect waves-light btn-large generate generate-btn indigo" type="submit" name="action">Generate</button>
-									</div>
-									<div class="col s12 m4 l4">
-										<button class="waves-effect waves-light btn-large clipboard clipboard-btn blue-grey darken-4" data-clipboard-target="#password">Copy</button>
-									</div>
-									<div class="col s12 m4 l4">
-										<button class="waves-effect waves-light btn-large reset reset-btn red lighten-2" type="submit" name="action">Reset</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="section stats">
-		        	<div class="card-panel indigo white-text center">
-		          	<span class="entropy"></span>
-		        	</div>
-							<div class="card center">
-		            <div class="card-content">
-		              <span class="card-title worstcase"></span>
-		              <p class="worstcasetext"></p>
-		            </div>
-								<table class="centered responsive-table">
-					        <thead>
-					          <tr>
-				              <th data-field="seconds">Seconds</th>
-				              <th data-field="minutes">Minutes</th>
-				              <th data-field="hours">Hours</th>
-											<th data-field="days">Days</th>
-											<th data-field="years">Years</th>
-					          </tr>
-					        </thead>
-					        <tbody>
-					          <tr>
-					            <td class="seconds"></td>
-											<td class="minutes"></td>
-											<td class="hours"></td>
-											<td class="days"></td>
-											<td class="years"></td>
-					          </tr>
-					        </tbody>
-					      </table>
-		          </div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="entropy-page center">
-				<p class="flow-text text">Move your mouse to add entropy</p>
-				<div class="entropy-bar">
-					<div style="width: 0"></div>
-				</div>
-			</div>
-			<!-- End of Container -->
-		</main>
-		<!-- End of Main -->
-		<!-- Footer -->
-		<footer class="page-footer main-page" style="display: none;">
-      <div class="container center">
-        <div class="row">
-					<div class="col s12 m12">
-						<p class="status white-text"></p>
-					</div>
-        </div>
-				<div class="row">
-          <div class="col s12 m12">
-						<p class="secure white-text"></p>
-					</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hawkpass | Secure Password Generator</title>
+  <link rel="canonical" href="https://petroskal.com/hawkpass" />
+  <meta name="description" content="Hawkpass is a Diceware based password generator that uses your mouse movements to generate secure easy-to-remember passwords." />
+  <meta name="keywords" content="strong password generator, secure password generator, diceware, random, secure" />
+  <meta name="author" content="Petros Kalogiannakis" />
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico"/>
+  <!-- Styles -->
+  <!-- Core styles -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/pace.min.css">
+  <!-- 3rd party styles -->
+  <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/materialize/dist/css/materialize.min.css">
+  <!-- End of Styles -->
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-page" style="display: none;">
+    <!-- Side Navbar -->
+    <ul id="slide-out" class="side-nav fixed black">
+      <li>
+	<div class="userView">
+	  <div class="background center-align white-text">
+	    <i class="fa fa-lock" aria-hidden="true"></i>
+	    Hawkpass
+	  </div>
+	  <a href="https://github.com/kalpetros/hawkpass/blob/master/LICENCE" class="grey-text">
+	    <span class="name">© MIT</span>
+	  </a>
+	  <a href="https://github.com/kalpetros/hawkpass/wiki/Changelog" class="grey-text">
+	    <span class="email"><i class="fa fa-code-fork" aria-hidden="true"></i> 1.0.0-alpha.10</span>
+	  </a>
+	</div>
+      </li>
+      <li>
+	<a href="https://github.com/kalpetros/hawkpass" class="grey-text">
+	  <i class="fa fa-github grey-text" aria-hidden="true"></i> Fork me on Github
+	</a>
+      </li>
+      <li>
+	<a href="https://github.com/kalpetros/hawkpass-desktop/releases" class="grey-text">
+	  <i class="fa fa-desktop grey-text" aria-hidden="true"></i> Download desktop app
+	</a>
+      </li>
+      <li><div class="divider grey"></div></li>
+      <li><a class="subheader grey-text">Preferences</a></li>
+      <li>
+	<a href="https://github.com/kalpetros/hawkpass-desktop/releases" class="grey-text">
+	  <i class="fa fa-undo grey-text" aria-hidden="true"></i> Reset entropy
+	</a>
+      </li>
+      <li class="connection tooltipped"></li>
+    </ul>
+    <!-- End of Side Navbar -->
+  </header>
+  <!-- End of Header -->
+  <!-- Main -->
+  <main>
+    <!-- Container -->
+    <div class="main-page" style="display: none;">
+      <div class="password-field flow-text center-align">
+	<span class="copy tooltipped clipboard"
+	      data-position="left"
+	      data-delay="50"
+	      data-tooltip="Copy password to clipboard"
+	      data-clipboard-target="#password">
+	  <i class="fa fa-clipboard" aria-hidden="true"></i>
+	</span>
+	<span id="password"></span>
+      </div>
+      <div class="container">
+	<div class="section center">
+	  <form id="options">
+	    <p>
+	      <input type="checkbox" id="number" name="use_number" />
+	      <label for="number">Numbers</label>
+	    </p>
+	    <p>
+	      <input type="checkbox" id="symbols" name="use_symbol" />
+	      <label for="symbols">Symbols</label>
+	    </p>
+	    <p>
+	      <input type="checkbox" id="spaces" name="use_spaces" />
+	      <label for="spaces">Spaces</label>
+	    </p>
+	    <p>
+	      <input type="checkbox" id="diceware" name="diceware" />
+	      <label for="diceware">Diceware</label>
+	    </p>
+	    <p>
+	      <input type="checkbox" id="morewords" name="use_more_words" />
+	      <label for="morewords">More words</label>
+	    </p>
+	    <!--<div class="row">
+	      <div class="range-field col s12">
+		<input type="range" id="length" min="4" max="64" />
+		<label for="length">Password length</label>
+              </div>
+	    </div>-->
+	  </form>
+	</div>
+	<div class="section center">
+	  <button class="waves-effect waves-light btn-large generate generate-btn indigo"
+		  type="submit"
+		  name="action">Generate
+	  </button>
+	</div>
+      </div>
+      <div class="entropy-page center">
+	<p class="flow-text text">Move your mouse to add entropy</p>
+	<div class="entropy-bar">
+	  <div style="width: 0"></div>
+	</div>
+      </div>
+      <!-- End of Container -->
+  </main>
+  <footer class="page-footer grey lighten-4">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+	  <p class="flow-text">Assuming that someone is capable of guessing passwords at the rate of a trillion (1,000,000,000,000) key/second, a search on 50% of the total keyspace will take:</p>
+          <blockquote>
+	    <div class="row">
+	      <div class="col s6"><strong>Seconds</strong></div>
+	      <div class="col s6 seconds"></div>
+	    </div>
+	    <div class="row">
+	      <div class="col s6"><strong>Minutes</strong></div>
+	      <div class="col s6 minutes"></div>
+	    </div>
+	    <div class="row">
+	      <div class="col s6"><strong>Hours</strong></div>
+	      <div class="col s6 hours"></div>
+	    </div>
+	    <div class="row">
+	      <div class="col s6"><strong>Days</strong></div>
+	      <div class="col s6 days"></div>
+	    </div>
+	    <div class="row">
+	      <div class="col s6"><strong>Years</strong></div>
+	      <div class="col s6 years"></div>
+	    </div>
+	  </blockquote>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-        <a class="white-text" href="https://github.com/kalpetros/hawkpass/blob/master/LICENCE">© MIT</a>
-				<p class="grey-text text-lighten-4 right"><a href="https://github.com/kalpetros/hawkpass/wiki/Changelog"><i class="fa fa-code-fork"></i> 1.0.0-alpha.10</a></p>
-        </div>
-      </div>
-    </footer>
-		<!-- End of Footer -->
-		<!-- JavaScript files -->
-		<!-- 3rd Party Javascript -->
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
-		<script src="bower_components/clipboard/dist/clipboard.min.js"></script>
-    <!-- Core Javascript -->
-    <script src="js/pace.min.js"></script>
-    <script src="js/connection.js"></script>
-    <script src="js/crypto-sha256.js"></script>
-    <script src="js/random.js"></script>
-    <script src="js/wordlist.js"></script>
-    <script src="js/generate.js"></script>
-		<script src="js/functions.js"></script>
-		<!-- End of JavaScript files -->
-	</body>
+    </div>
+    <div class="footer-copyright">
+      <div class="container entropy center-align black-text"></div>
+    </div>
+  </footer>
+  <!-- End of Main -->
+  <!-- JavaScript files -->
+  <!-- 3rd Party Javascript -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+  <script src="bower_components/clipboard/dist/clipboard.min.js"></script>
+  <!-- Core Javascript -->
+  <script src="assets/js/pace.min.js"></script>
+  <script src="assets/js/connection.min.js"></script>
+  <script src="assets/js/crypto-sha256.js"></script>
+  <script src="assets/js/random.js"></script>
+  <script src="assets/js/wordlist.js"></script>
+  <script src="assets/js/generate.min.js"></script>
+  <script src="assets/js/functions.min.js"></script>
+  <!-- End of JavaScript files -->
+</body>
 </html>

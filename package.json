@@ -1,0 +1,28 @@
+{
+  "name": "hawkpass",
+  "version": "1.0.0",
+  "description": "Strong random password generator",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.3.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2",
+    "pump": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalpetros/hawkpass.git"
+  },
+  "author": "Petros Kalogiannakis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kalpetros/hawkpass/issues"
+  },
+  "homepage": "https://github.com/kalpetros/hawkpass#readme"
+}
