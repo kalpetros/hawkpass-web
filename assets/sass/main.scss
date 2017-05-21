@@ -54,17 +54,14 @@ main {
 /* Entropy bar */
 .entropy-bar {
     height: 100%;
-}
-.entropy-bar > div {
-    background-color: rgba(63, 81, 181, 0.5);
-    height: 100%;
+    > div {
+	background-color: rgba(63, 81, 181, 0.5);
+	height: 100%;
+    }
 }
 header, main, footer {
     padding-left: 300px;
-}
-
-@media only screen and (max-width : 992px) {
-    header, main, footer {
+    @media only screen and (max-width : 992px) {
         padding-left: 0;
     }
 }
