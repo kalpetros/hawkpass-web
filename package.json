@@ -1,6 +1,6 @@
 {
   "name": "hawkpass",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Strong random password generator",
   "main": "gulpfile.js",
   "dependencies": {},

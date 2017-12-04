@@ -1,4 +1,4 @@
-// Copyright 2011-2016 Gavin Wahl, Colin Thomas-Arnold, Fusionbox.
+// Copyright 2011-2017 Gavin Wahl, Colin Thomas-Arnold, Fusionbox.
 // Updated and modified by Petros Kalogiannakis (@kalpetros).
 // All rights reserved.
 
