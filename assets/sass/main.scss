@@ -3,10 +3,9 @@
  ** Strong random password generator
  ** Created by: Petros Kalogiannakis (@kalpetros)
  ** Created: 20 August 2015
- ** Updated: 22 October 2016
+ ** Updated: 4 December 2017
  ** Licence: MIT
  */
-/* Sticky footer */
 a,
 a:visited,
 a:hover,
@@ -25,44 +24,41 @@ main, footer {
 main {
     flex: 1 0 auto;
 }
-/* Preferences */
+.main-page,
+.page-footer {
+    padding-left: 300px;
+    display: none;
+    @media only screen and (max-width : 992px) {
+        padding-left: 0;
+    }
+}
 #options p {
     display: inline-block;
     margin-left: 2%;
 }
-/* Buttons */
 .btn-large {
     margin-top: 2%;
 }
-/* Remove space above footer */
 .page-footer {
     margin-top: 0 !important;
 }
-/* Entropy page */
 .entropy-page {
     height: 100vh;
     width: 100%;
 }
 /* Entropy page text - vertical and horizontal alignment */
 .text {
+    position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    position: absolute;
 }
-/* Entropy bar */
 .entropy-bar {
     height: 100%;
     > div {
 	background-color: rgba(63, 81, 181, 0.5);
 	height: 100%;
-    }
-}
-header, main, footer {
-    padding-left: 300px;
-    @media only screen and (max-width : 992px) {
-        padding-left: 0;
     }
 }
 .side-nav {

@@ -196,7 +196,7 @@
 
 	if ( events_left == 0 ) {
 	    $('.entropy-page').hide();
-	    $('.main-page').show();
+	    $('.main-page, .page-footer').show();
 	    generate_password();
 	}
 
@@ -210,7 +210,7 @@
 	    events_left--;
 	    if (  events_left == 0 ) {
 		$('.entropy-page').hide();
-		$('.main-page').show();
+		$('.main-page, .page-footer').show();
 		generate_password();
 	    }
 	    else if ( events_left > 0 && events_left % 10 == 0 )

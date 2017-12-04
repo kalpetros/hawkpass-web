@@ -1,11 +1,11 @@
 <!--
-    ** Hawkpass
-    ** Strong random password generator
-    ** Created by: Petros Kalogiannakis (@kalpetros)
-    ** Created: 20 August 2015
-    ** Updated: 20 May 2017
-    ** Licence: MIT
-  -->
+     ** Hawkpass
+     ** Strong random password generator
+     ** Created by: Petros Kalogiannakis (@kalpetros)
+     ** Created: 20 August 2015
+     ** Updated: 4 December 2017
+     ** Licence: MIT
+-->
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
@@ -17,13 +17,11 @@
   <meta name="author" content="Petros Kalogiannakis" />
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico"/>
   <!-- Styles -->
-  <!-- Core styles -->
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/pace.min.css">
   <!-- 3rd party styles -->
   <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="bower_components/materialize/dist/css/materialize.min.css">
+  <!-- Core styles -->
+  <link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
   <!-- End of Styles -->
 </head>
 <body>
@@ -58,13 +56,13 @@
 	  <i class="fa fa-desktop grey-text text-lighten-3" aria-hidden="true"></i> Download desktop app
 	</a>
       </li><!--
-      <li><div class="divider grey lighten-3"></div></li>
-      <li><a class="subheader grey-text text-lighten-3">Preferences</a></li>
-      <li>
-	<a href="https://github.com/kalpetros/hawkpass-desktop/releases" class="grey-text text-lighten-3">
-	  <i class="fa fa-undo grey-text text-lighten-3" aria-hidden="true"></i> Reset entropy
-	</a>
-      </li>-->
+		<li><div class="divider grey lighten-3"></div></li>
+		<li><a class="subheader grey-text text-lighten-3">Preferences</a></li>
+		<li>
+		<a href="https://github.com/kalpetros/hawkpass-desktop/releases" class="grey-text text-lighten-3">
+		<i class="fa fa-undo grey-text text-lighten-3" aria-hidden="true"></i> Reset entropy
+		</a>
+		</li>-->
       <li class="connection tooltipped">
 	<a>
 	  <i></i> <span></span>
@@ -77,7 +75,7 @@
   <!-- Main -->
   <main>
     <!-- Container -->
-    <div class="main-page" style="display: none;">
+    <div class="main-page">
       <div class="password-field tooltipped flow-text center-align clipboard copy"
 	   data-position="bottom"
 	   data-delay="50"
@@ -109,11 +107,11 @@
 	      <label for="morewords">More words</label>
 	    </p>
 	    <!--<div class="row">
-	      <div class="range-field col s12">
-		<input type="range" id="length" min="4" max="64" />
-		<label for="length">Password length</label>
-              </div>
-	    </div>-->
+		 <div class="range-field col s12">
+		 <input type="range" id="length" min="4" max="64" />
+		 <label for="length">Password length</label>
+		 </div>
+		 </div>-->
 	  </form>
 	</div>
 	<div class="section center">
@@ -123,13 +121,14 @@
 	  </button>
 	</div>
       </div>
-      <div class="entropy-page center">
-	<p class="flow-text text">Move your mouse to add entropy</p>
-	<div class="entropy-bar">
-	  <div style="width: 0"></div>
-	</div>
+    </div>
+    <div class="entropy-page center">
+      <p class="flow-text text">Move your mouse to add entropy</p>
+      <div class="entropy-bar">
+	<div style="width: 0"></div>
       </div>
-      <!-- End of Container -->
+    </div>
+    <!-- End of Container -->
   </main>
   <footer class="page-footer grey lighten-4">
     <div class="container">
