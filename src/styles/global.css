@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgba(31, 41, 55, 1);
+}
+
+.cursor-copy {
+  cursor: copy;
+}
+
+.show {
+  animation: fadein 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 1rem;
+  }
+}
